@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteo Alumnos</title>
+    <!-- Aqui abajo van los Estilos (CSS) -->
+    <style>
+        h1 {
+            color: green;
+        }
+
+        header {
+            background-color: blueviolet;
+            color: white;
+        }
+
+        header>h1 {
+            color: red;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ff7e5f 0%, #feb47b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        button {
+            background-color: cadetblue;
+            color: white;
+            padding: 5px;
+        }
+
+        button:hover {
+            scale: 1.1;
+        }
+
+        a {
+            outline: none;
+            text-decoration: none;
+            padding: 2px 1px 0;
+        }
+
+        a:link {
+            color: #d09e0be1;
+        }
+
+        a:visited {
+            color: #437a16;
+        }
+
+        a:hover {
+            border-bottom: 1px solid;
+            background: #cdfeaa;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Sorteo Alumnos</h1>
+        <h4>Agregá alumnos y sorteá quién participa</h4>
+    </header>
+    <!--Tenemos que escribir los 6 "H" con estilos inline
+    cambiando colores, fuentes...
+    -->
+    <!-- <h1></h1> -->
+
+    <!-- Botón que ejecuta la función de alerta -->
+    <button onclick="alert('¡Hola, mundo!')"
+        style="background-color: blue; color: white; padding: 5px; border-radius: 10%;">
+        Haceme click
+    </button>
+
+    <button> hola a todos</button>
+
+    <button>Basta diego!</button>
+    <a href="https://www.google.com">Esto me lleva a Google</a>
+    <a href="https://www.ole.com">Esto me lleva a Ole</a>
+    <button onclick="saludar()"> adios a todos</button><br>
+    <!--
+    Como actividad de fin de semana, queremos agregar como "SUMA" el boton de:
+    RESTAR
+    MULTIPLICAR
+    DIVIDIR
+    -->
+    <button onclick="sumar()">Suma dos numeros!</button>
+    <input>
+    <script>
+        function saludar (){
+            alert("Hola a Todos!");
+            let nombre = prompt("¿cual es tu nombre?");
+            let apellido = prompt("¿Y tu Apellido?")
+            alert("Hola, " + nombre + " " + apellido + "!");
+        }
+        function sumar(){
+            let numero1 = prompt("Pasame el Primer Número"); 
+            let numero2 = prompt("Pasame el Segundo Número");            
+            let resultado = Number(numero1) + Number(numero2);
+            alert(resultado)
+        }
+    </script>
+</body>
+
+</html>
