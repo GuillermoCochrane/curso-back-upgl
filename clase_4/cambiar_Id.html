@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar etiqueta por ID</title>
+    <style>
+        .parrafoBonito{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <p id="liberame" class="parrafoBonito">
+        Este esta atrapado!
+    </p>
+    <p class="parrafoBonito" >
+        Este esta atrapado
+    </p>
+    <p>
+        Este esta atrapado
+    </p>
+    <script>
+        //quiero liberar el primero...
+        //Como accedo al primero?✅
+        //Como cambio el contenido? Estoy Liberado!!✅
+        let objetoDOM = document.getElementById("liberame");//Crea una variable que se llama "objetoDOM" y Apunta al "p" con ID liberame.
+        console.log(objetoDOM);
+        alert("siguiente");
+        let contenidoPreso = objetoDOM.textContent; // Crea la variable "contenidoPreso" y apuntamos al contenido del objetoDOM
+        console.log(contenidoPreso);
+        alert("siguiente");
+        objetoDOM.innerText = "Estoy Liberado!!";//Cambiamos el contenido de "objetoDOM" por Estoy liberado!
+        //quiero poner una alerta de que se libero...✅
+        alert(objetoDOM.textContent);
+        objetoDOM.innerText = contenidoPreso; //Cambiamos el contenido de objetoDOM a contenidoPreso.
+        console.log("El contenido inicial del parrafo era: "+ contenidoPreso);
+        if(objetoDOM.textContent == "Estoy Liberado!!"){
+            console.log("Aca deberiamos cambiar el color")
+            objetoDOM.style.backgroundColor = "blue"
+            objetoDOM.style.color = "white"
+        }else{
+            console.log("Seguis presooo")
+        }
+
+    </script>
+</body>
+</html>
