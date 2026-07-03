@@ -1,0 +1,1 @@
+Buen dia!! Comparto lo que hicimos/vimos ayer en clase! asi lo tienen todos, ya comenzamos con todo con PHP viendo metodos para ENVIAR y RECIBIR datos desde una base de datos! Por el momento este es el formulario...se animan a darle estilos?
