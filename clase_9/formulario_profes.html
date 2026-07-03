@@ -1,0 +1,78 @@
+<h1>Articulo 1</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Articulos</title>
+    <style>
+        .articulo {
+            /* Tamaño y color del div */
+            width: 300px;
+            height: auto;
+            background-color: #ebcbb2;
+            padding: 14px;
+
+            /* BORDES */
+            /* Grosor, estilo (solid/dashed/dotted) y color */
+            border: 2px solid #e0e0e0;
+            /* Redondeo de esquinas */
+            border-radius: 12px;
+
+            /* SOMBRAS */
+            /* Desplazamiento X, Desplazamiento Y, Desenfoque, Extensión y Color */
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+        }
+        #envio{
+            color: green;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Cargar Artículos</h1>
+    <form action="procesar.php" method="POST">
+        <div id="contenedor-articulos">
+            <div id="articulo" class="articulo">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre">
+
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion"></textarea>
+                <!-- Conjunto de Radios para TALLES -->
+                <h3>Talles</h3>
+                <input type="radio" id="talle_niño" name="talle" value="talle_niño">
+                <label for="talle_niño">Talle Niño</label><br>
+                <input type="radio" id="talle_hombre" name="talle" value="talle_hombre">
+                <label for="talle_hombre">Talle Hombre</label><br>
+                <input type="radio" id="talle_mujer" name="talle" value="talle_mujer">
+                <label for="talle_mujer">Talle Mujer</label><br>
+                <!-- Conjunto de Radios para COLORES -->
+                <h3>Colores</h3>
+                <input type="radio" id="color_negro" name="color" value="color_negro">
+                <label for="color_negro">NEGRO</label><br>
+                <input type="radio" id="color_rosa" name="color" value="color_rosa">
+                <label for="color_rosa">ROSA</label><br>
+                <input type="radio" id="color_azul" name="color" value="color_azul">
+                <label for="color_azul">AZUL</label><br>
+                <input type="radio" id="color_verde" name="color" value="color_verde">
+                <label for="color_verde">VERDE</label><br>
+                <h3>Precio:</h3>
+                <input type="range" min="5000" max="50000" step="1000" id="precio">
+                <label id="label_precio">El precio es:</label>
+                <button type="submit" id="envio">Guardar Articulo</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        let contenedor = document.getElementById("label_precio");
+        let range = document.getElementById("precio");
+        range.addEventListener("input", function () {
+            contenedor.textContent = "Precio: $" + range.value;
+        });
+    </script>
+</body>
+
+</html>
