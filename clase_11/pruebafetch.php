@@ -129,9 +129,7 @@
       <form method="POST">
         <button type="submit">Enviar por POST</button>
       </form>
-      <?php if (isset($mensaje)): ?>
-        <div class="mensaje-post"><?= $mensaje ?></div>
-      <?php endif; ?>
+      <p><?= $mensaje ?? '' ?></p>
     </div>
 
     <div class="seccion">
