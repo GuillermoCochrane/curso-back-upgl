@@ -1,0 +1,112 @@
+📌 *TRABAJO INTEGRADOR – PHP NIVEL INTERMEDIO*
+
+La idea de este ejercicio es juntar *todo lo que vimos en los 5 ejercicios anteriores* en una pequeña aplicación.
+
+🎯 *Objetivo:* Crear un sistema que muestre el estado académico de varios alumnos.
+
+Van a trabajar utilizando:
+
+✅ Arrays asociativos
+✅ `foreach`
+✅ `if / elseif / else`
+✅ Operadores lógicos (`&&`)
+✅ Funciones y `return`
+✅ `include` / `require_once`
+✅ HTML + Bootstrap
+
+---
+
+📂 *El proyecto deberá tener estos archivos:*
+
+* `header.php`
+* `footer.php`
+* `funciones.php`
+* `alumnos.php`
+
+---
+
+👨‍🎓 *1. Crear un array de alumnos*
+
+En `alumnos.php` deberán crear un array que contenga varios alumnos.
+
+Cada alumno debe tener:
+
+* Nombre
+* Nota 1
+* Nota 2
+* Asistencia
+
+Ejemplo de datos:
+
+Lucio → Nota 1: 8 | Nota 2: 9 | Asistencia: 90%
+Juan → Nota 1: 6 | Nota 2: 5 | Asistencia: 75%
+Ana → Nota 1: 3 | Nota 2: 4 | Asistencia: 85%
+Martina → Nota 1: 9 | Nota 2: 8 | Asistencia: 60%
+
+---
+
+⚙️ *2. Crear las funciones*
+
+En `funciones.php` deberán crear:
+
+🔹 `calcularPromedio($nota1, $nota2)`
+
+Debe calcular el promedio de las dos notas y devolverlo utilizando `return`.
+
+🔹 `obtenerEstado($promedio, $asistencia)`
+
+Debe devolver:
+
+🟢 *"Promocionado"* → promedio mayor o igual a 7 *Y* asistencia mayor o igual a 80%.
+
+🟡 *"Rinde final"* → promedio mayor o igual a 4 *Y* asistencia mayor o igual a 70%.
+
+🔴 *"Recursa"* → en cualquier otro caso.
+
+---
+
+🔁 *3. Recorrer los alumnos*
+
+Utilizando un `foreach`, deberán recorrer todos los alumnos.
+
+Por cada alumno deberán:
+
+1️⃣ Obtener sus datos.
+2️⃣ Calcular el promedio llamando a `calcularPromedio()`.
+3️⃣ Obtener su estado llamando a `obtenerEstado()`.
+4️⃣ Mostrar el resultado.
+
+---
+
+📊 *4. Mostrar una tabla con Bootstrap*
+
+La página deberá mostrar una tabla similar a esta:
+
+*Alumno | Nota 1 | Nota 2 | Promedio | Asistencia | Estado*
+
+Cada fila deberá generarse automáticamente desde el `foreach`.
+
+⚠️ No vale escribir cada alumno manualmente en HTML.
+
+---
+
+🧩 *5. Utilizar archivos separados*
+
+Deberán reutilizar los archivos:
+
+`header.php`
+`footer.php`
+
+Y cargar también:
+
+`funciones.php`
+
+La página `alumnos.php` debe contener principalmente los datos y el recorrido de los alumnos.
+
+---
+
+🏁 *Resultado esperado*
+
+Al abrir `alumnos.php` deberíamos ver una página completa con Bootstrap y una tabla donde aparezcan todos los alumnos, su promedio calculado automáticamente y su estado académico.
+
+💡 *IMPORTANTE:* No aparece ningún concepto nuevo. Todo el ejercicio se puede resolver utilizando lo aprendido en los *5 ejercicios anteriores*.
