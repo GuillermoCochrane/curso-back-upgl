@@ -72,17 +72,26 @@
     ⚠️ No vale escribir cada alumno manualmente en HTML.
 
    */
+  /*
+  🧩 *5. Utilizar archivos separados*
+
+    Deberán reutilizar los archivos:
+
+    `header.php`
+    `footer.php`
+
+    Y cargar también:
+
+    `funciones.php`
+
+    La página `alumnos.php` debe contener principalmente los datos y el recorrido de los alumnos.
+
+   */
   require_once 'funciones.php';
+  require_once 'header.php'; 
 ?>
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="icon.png" />
-  <title>Estado Académico</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-</head>
-<body class="d-flex flex-column min-vh-100">
-    <main class="container my-4 flex-grow-1">
+
+  <main class="container my-4 flex-grow-1">
     <div class="card shadow-sm">
       <div class="card-body p-4">
         <h2 class="h4 mb-3">📋 Listado de alumnos</h2>
@@ -123,5 +132,5 @@
       </div>
     </div>
   </main>
-</body>
-</html>
+
+<?php require_once 'footer.php'; ?>
