@@ -48,4 +48,80 @@
       'asistencia' => 60
     ]
   ];
+  /*
+    🔁 *3. Recorrer los alumnos*
+
+    Utilizando un `foreach`, deberán recorrer todos los alumnos.
+
+    Por cada alumno deberán:
+
+    1️⃣ Obtener sus datos.
+    2️⃣ Calcular el promedio llamando a `calcularPromedio()`.
+    3️⃣ Obtener su estado llamando a `obtenerEstado()`.
+    4️⃣ Mostrar el resultado.
+
+    ---
+
+    📊 *4. Mostrar una tabla con Bootstrap*
+
+    La página deberá mostrar una tabla similar a esta:
+
+    *Alumno | Nota 1 | Nota 2 | Promedio | Asistencia | Estado*
+
+    Cada fila deberá generarse automáticamente desde el `foreach`.
+    ⚠️ No vale escribir cada alumno manualmente en HTML.
+
+   */
+  require_once 'funciones.php';
 ?>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="icon.png" />
+  <title>Estado Académico</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <main class="container my-4 flex-grow-1">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <h2 class="h4 mb-3">📋 Listado de alumnos</h2>
+        <p class="text-muted small">Notas y asistencia registradas para el período actual.</p>
+
+        <div class="table-responsive">
+          <table class="table table-striped table-hover align-middle text-center">
+            <thead class="table-primary">
+              <tr>
+                <th>#</th>
+                <th>Alumno</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Promedio</th>
+                <th>Asistencia</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <?php 
+                foreach ($alumnos as $alumno): 
+                $promedio = calcularPromedio($alumno['nota1'], $alumno['nota2']);
+              ?>
+                <tr>
+                  <td><?= $alumno['id'] ?></td>
+                  <td><strong><?= $alumno['nombre'] ?></strong></td>
+                  <td><?= $alumno['nota1'] ?></td>
+                  <td><?= $alumno['nota2'] ?></td>
+                  <td><?= $promedio ?></td>
+                  <td><?= $alumno['asistencia'] ?>%</td>
+                  <td><?= obtenerEstado($promedio, $alumno['asistencia']) ?></td>
+                </tr>
+              <?php endforeach; ?>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</body>
+</html>
