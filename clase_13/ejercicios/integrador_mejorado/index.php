@@ -1,27 +1,23 @@
 <?php require_once 'alumnos.php'; ?>
 <?php require_once 'funciones.php'; ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="<?= $icon; ?>" />
-  <title><?= $title; ?></title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-</head>
+<?php include 'head.php'; ?>
 <body class="d-flex flex-column min-vh-100">
+  <!--
 
-  <header class="bg-primary text-white py-3">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div>
-        <h1 class="h3 mb-0">🎓 Estado Académico</h1>
-        <small class="p-3">Sistema de seguimiento de alumnos</small>
-      </div>
-      <div>
-        <span class="badge bg-light text-primary">Ciclo 2026</span>
-      </div>
-    </div>
-  </header>
+    🧩 *5. Utilizar archivos separados*
+
+    Deberán reutilizar los archivos:
+
+    `header.php`
+    `footer.php`
+
+    Y cargar también:
+
+    `funciones.php`
+
+  -->
+  
+<?php include 'header.php'; ?>
 
   <main class="container my-4 flex-grow-1">
     <div class="card shadow-sm">
@@ -118,13 +114,6 @@
       </div>
     </div>
   </main>
-  <footer class="bg-dark text-white-50 py-3 mt-auto">
-    <div class="container d-flex justify-content-between align-items-center">
-      <span>Curso de backend PHP - UPGL</span>
-      <span>&copy; 2026 - Todos los derechos reservados</span>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <?php include 'footer.php'; ?>
 </body>
 </html>
