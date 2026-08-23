@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
-  <title>Pagina 1</title>
+  <link href="https://upgl.vercel.app/images/icon.png" rel="icon" type="image/png" />
+  <title>Home del sitio</title>
   <style>
     body {
       margin: 0;
@@ -36,7 +36,7 @@
   </style>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -50,7 +50,10 @@
               <a class="nav-link active" aria-current="page" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pagina2.php">PAGINA 2</a>
+              <a class="nav-link" href="./pages/pagina1/">PAGINA 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/pagina1/">PAGINA 2</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -78,9 +81,12 @@
     </nav>
   </header>
 
-  <body>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, officia vitae soluta voluptas aut et maiores fugiat quisquam dolorem totam ab excepturi nesciunt laborum eius omnis repellat ad, aperiam dolore.
-    <h1>PAGINA 1 DEL BODY </h1>
+    <main class="container my-4 flex-grow-1">
+        <h1 class="text-center">Este es el Home del sitio</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, officia vitae soluta voluptas aut et maiores fugiat quisquam dolorem totam ab excepturi nesciunt laborum eius omnis repellat ad, aperiam dolore.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, officia vitae soluta voluptas aut et maiores fugiat quisquam dolorem totam ab excepturi nesciunt laborum eius omnis repellat ad, aperiam dolore.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, officia vitae soluta voluptas aut et maiores fugiat quisquam dolorem totam ab excepturi nesciunt laborum eius omnis repellat ad, aperiam dolore.</p>
+    </main>
     <footer>
       <h1>ESTE ES EL FOOTER Y SALE BIEN EN TODOS LADOS!</h1>
     </footer>
