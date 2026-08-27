@@ -28,12 +28,10 @@
                 Dropdown
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="https://www.facebook.com/" target="_blank">IR A FACEBOOK</a></li>
-                <li><a class="dropdown-item" href="https://www.instagram.com" target="_blank">IR A INSTAGRAM</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="https://www.farmearaura.com" target="_blank">IR A FARMEAR AURA</a></li>
+                <?php 
+                  include __DIR__ . '/utilities/header_helper.php';
+                  render_dropdown($external_links); 
+                ?>
               </ul>
             </li>
             <li class="nav-item">
