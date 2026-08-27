@@ -53,7 +53,7 @@
               <a class="nav-link" href="./pages/pagina1/">PAGINA 1</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./pages/pagina1/">PAGINA 2</a>
+              <a class="nav-link" href="./pages/pagina2/">PAGINA 2</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
