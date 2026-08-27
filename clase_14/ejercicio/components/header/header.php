@@ -28,12 +28,12 @@
                 Dropdown
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="www.facebook.com">IR A FACEBOOK</a></li>
-                <li><a class="dropdown-item" href="www.instagram.com">IR A INSTAGRAM</a></li>
+                <li><a class="dropdown-item" href="https://www.facebook.com/" target="_blank">IR A FACEBOOK</a></li>
+                <li><a class="dropdown-item" href="https://www.instagram.com" target="_blank">IR A INSTAGRAM</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="www.farmearaura.com">IR A FARMEAR AURA</a></li>
+                <li><a class="dropdown-item" href="https://www.farmearaura.com" target="_blank">IR A FARMEAR AURA</a></li>
               </ul>
             </li>
             <li class="nav-item">
