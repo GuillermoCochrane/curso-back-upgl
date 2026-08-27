@@ -1,0 +1,12 @@
+{
+  "name": "curso-back-upgl",
+  "version": "1.0.0",
+  "description": "ejercicios del curso de backend en PHP",
+  "repository": "https://github.com/GuillermoCochrane/curso-back-upgl",
+  "author": "Guillermo Cochrane <cochraneguillermo@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "php -S localhost:8000",
+    "dev": "php -S localhost:8000"
+  }
+}
