@@ -8,21 +8,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="<?= isset($home_link) ? $home_link : './' ?>"> 
-              <?= isset($home_tag) ? $home_tag : 'Home' ?>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= isset($page1_link) ? $page1_link : './pages/pagina1' ?>">
-                <?= isset($page1_tag) ? $page1_tag : 'PAGINA 1' ?>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="<?= isset($page2_link) ? $page2_link : './pages/pagina2/' ?>">
-                <?= isset($page2_tag) ? $page2_tag : 'PAGINA 2' ?>
-              </a>
-            </li>
+            <?php 
+              render_navbar(isset($internal_links) ? $internal_links : []);
+            ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Dropdown
@@ -30,7 +18,7 @@
               <ul class="dropdown-menu">
                 <?php 
                   include __DIR__ . '/utilities/header_helper.php';
-                  render_dropdown($external_links); 
+                  render_dropdown(isset($external_links) ? $external_links : []);
                 ?>
               </ul>
             </li>
