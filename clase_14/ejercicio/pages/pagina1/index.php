@@ -1,11 +1,31 @@
 <?php 
   $title = 'PAGINA 1';
-  $home_link = '../../';
-  $home_tag = 'Home';
-  $page1_link = './';
-  $page1_tag = 'PAGINA 1';
-  $page2_link = '../pagina2/';
-  $page2_tag = 'PAGINA 2';
-?>
 
-<?php include './template.php'; ?>
+  $internal_links = [
+    [
+      "page_link" => "../../",
+      "page_tag" => "Home",
+      "active" => false,
+    ],
+    [
+      "page_link" => "./",
+      "page_tag" => "PAGINA 1",
+      "active" => true,
+    ],
+    [
+      "page_link" => "../pagina2/",
+      "page_tag" => "PAGINA 2",
+      "active" => false,
+    ]
+  ];
+
+  function render_navbar($links) {
+    foreach ($links as $link) {
+      extract($link);
+      include __DIR__ . '/../../components/header/nav_item.php';
+    }
+  }
+
+  include './template.php'; 
+
+?>
