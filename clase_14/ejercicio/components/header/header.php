@@ -9,7 +9,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <?php 
-              render_navbar(isset($internal_links) ? $internal_links : []);
+              include __DIR__ . '/utilities/header_helper.php';
+              render_navbar(isset($internal_links) ? $internal_links : [], isset($nav_item) ? $nav_item : '');
             ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -17,8 +18,7 @@
               </a>
               <ul class="dropdown-menu">
                 <?php 
-                  include __DIR__ . '/utilities/header_helper.php';
-                  render_dropdown(isset($external_links) ? $external_links : []);
+                  render_dropdown($external_links, $dropdown_link, $dropdown_divider);
                 ?>
               </ul>
             </li>
