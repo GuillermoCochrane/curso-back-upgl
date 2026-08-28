@@ -21,14 +21,26 @@
     ]
   ];
 
-  function render_dropdown($links) {
+  require_once __DIR__ . "/../../../utilities/render_templates.php";
+
+  $nav_item = __DIR__ . "/../nav_item";
+  $dropdown_link = __DIR__ . "/../dropdown_link";
+  $dropdown_divider = __DIR__ . "/../dropdown_divider";
+
+  function render_navbar(array $links, string $component) {
     foreach ($links as $link) {
-      extract($link);
-      if ($is_link) {
-        include __DIR__ . '/../dropdown_link.php';
+      render_template($component, $link);
+    }
+  }
+
+  function render_dropdown(array $links, string $dropdown_link, string $divider) {
+    foreach ($links as $link) {
+      if (isset($link['is_link']) && $link['is_link']) {
+        render_template($dropdown_link, $link);
       } else {
-        include __DIR__ . '/../dropdown_divider.php';
+        render_template($divider);
       }
     }
   }
+
 ?>
