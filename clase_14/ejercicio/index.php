@@ -19,13 +19,6 @@
     ]
   ];
 
-  function render_navbar($links) {
-    foreach ($links as $link) {
-      extract($link);
-      include 'components/header/nav_item.php';
-    }
-  }
-
   include 'pages/home/template.php';
 
 ?>
