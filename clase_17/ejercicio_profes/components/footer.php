@@ -22,18 +22,12 @@
         <!-- Grid column -->
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
           <h6 class="text-uppercase mb-4 fw-bold">Productos</h6>
-          <p>
-            <a class="text-white"><?php echo $marca1; ?></a>
-          </p>
-          <p>
-            <a class="text-white"><?php echo $marca2; ?></a>
-          </p>
-          <p>
-            <a class="text-white"><?php echo $marca3; ?></a>
-          </p>
-          <p>
-            <a class="text-white"><?php echo $marca4; ?></a>
-          </p>
+          <?php 
+            foreach ($zapatillas ?? [] as $zapatilla) {
+              extract($zapatilla);
+              include("components/links_footer.php");
+            }
+          ?>
         </div>
         <!-- Grid column -->
 
@@ -59,17 +53,26 @@
           <a
             class="btn btn-outline-light rounded-circle m-1"
             href="#!"
-            role="button"><i class="fab fa-facebook-f"></i></a>
+            role="button"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
           <!-- Instagram -->
           <a
             class="btn btn-outline-light rounded-circle m-1"
             href="#!"
-            role="button"><i class="fab fa-instagram"></i></a>
+            role="button"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
           <!-- WhatsApp -->
           <a
             class="btn btn-outline-light rounded-circle m-1"
             href="#!"
-            role="button"><i class="fab fa-whatsapp"></i></a>
+            role="button"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </div>
       </div>
       <!--Grid row-->
