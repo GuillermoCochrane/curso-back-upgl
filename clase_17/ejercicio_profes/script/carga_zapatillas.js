@@ -180,109 +180,10 @@ function getZapatillaById(id) {
   return null; // Si no se encuentra, retorna null
 }
 
-// Función principal para generar las tarjetas (cards) de zapatillas dinámicamente en la página
-// Crea una fila de tarjetas para cada marca de zapatillas
-function generarCards() {
-  // Recorremos cada marca de zapatillas (nike, adidas, etc.)
-  for (let marca in zapatillas) {
-    // Buscamos la sección HTML correspondiente a la marca (ej: <section id="nike">)
-    const section = document.getElementById(marca);
-    if (!section) continue; // Si no existe la sección, saltamos a la siguiente marca
-
-    // Eliminamos la fila anterior si ya existe para evitar duplicados
-    const existingRow = section.querySelector(".row");
-    if (existingRow) {
-      existingRow.remove();
-    }
-
-    // Creamos un nuevo contenedor de fila (div con clase 'row') para organizar las tarjetas
-    const row = document.createElement("div");
-    row.className = "row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4";
-
-    // Recorremos cada zapatilla dentro de la marca actual
-    for (let id in zapatillas[marca]) {
-      const zap = zapatillas[marca][id]; // Obtenemos los datos de la zapatilla
-
-      // Creamos el elemento HTML de la tarjeta usando una función auxiliar
-      const card = crearCardElemento(id, zap);
-
-      // Agregamos un comentario HTML invisible dentro de la tarjeta para facilitar la inspección en el navegador
-      // Esto ayuda a identificar la zapatilla en el DOM (ej: <!-- zapatilla: nike-dunk-low - Nike Dunk Low -->)
-      const comment = document.createComment(
-        `zapatilla: ${id} - ${zap.nombre}`,
-      );
-      card.appendChild(comment);
-
-      // Agregamos la tarjeta a la fila
-      row.appendChild(card);
-    }
-
-    // Finalmente, agregamos la fila completa a la sección de la marca
-    section.appendChild(row);
-  }
-}
-
-// Función auxiliar que crea y retorna el elemento HTML completo de una tarjeta de zapatilla
-// Recibe el ID único y los datos de la zapatilla
-function crearCardElemento(id, zap) {
-  // Creamos el contenedor principal de la tarjeta
-  const card = document.createElement("div");
-  card.className = "card h-100 border-0 shadow-sm rounded-4 overflow-hidden";
-  const column = document.createElement("div");
-  column.className = "col";
-  const imageFrame = document.createElement("div");
-  imageFrame.className = "ratio ratio-4x3 bg-white";
-
-  // Creamos la imagen de la zapatilla
-  const img = document.createElement("img");
-  img.src = zap.imagen; // URL de la imagen
-  img.className = "card-img-top w-100 h-100 object-fit-contain p-3";
-  img.loading = "lazy";
-  img.alt = "Zapatilla " + zap.nombre; // Texto alternativo para accesibilidad
-
-  // Creamos el cuerpo de la tarjeta (contiene título, descripción y botón)
-  const body = document.createElement("div");
-  body.className = "card-body p-4 d-flex flex-column border-top";
-
-  // Título de la zapatilla
-  const title = document.createElement("h5");
-  title.className = "card-title h5 fw-bold";
-  title.textContent = zap.nombre; // Nombre de la zapatilla
-
-  // Descripción breve
-  const text = document.createElement("p");
-  text.className = "card-text text-body-secondary small mb-4";
-  text.textContent = zap.descripcion; // Descripción de la zapatilla
-
-  // Botón para ver más detalles (abre un modal)
-  const button = document.createElement("button");
-  button.className = "btn btn-outline-dark rounded-pill w-100 fw-semibold";
-  button.setAttribute("data-bs-toggle", "modal"); // Atributo para activar modal de Bootstrap
-  button.setAttribute("data-bs-target", "#detallesModal"); // ID del modal a abrir
-  button.setAttribute("data-zapatilla", id); // Atributo personalizado con el ID de la zapatilla
-  button.textContent = "Ver Detalles"; // Texto del botón
-
-  // Ensamblamos la tarjeta: agregamos elementos al cuerpo, luego al contenedor principal
-  body.appendChild(title);
-  body.appendChild(text);
-  const price = document.createElement("p");
-  price.className = "fs-4 fw-bold mb-3 mt-auto";
-  price.textContent = zap.precio;
-  body.appendChild(price);
-  body.appendChild(button);
-  imageFrame.appendChild(img);
-  card.appendChild(imageFrame);
-  card.appendChild(body);
-
-  column.appendChild(card);
-  return column;
-}
-
 // Espera a que el DOM esté totalmente cargado antes de ejecutar el código
 document.addEventListener("DOMContentLoaded", function () {
   // escucha el evento DOMContentLoaded
   // Generar cards dinámicamente
-  generarCards();
 
   // Delegación de eventos: un solo listener para todos los botones con data-zapatilla
   document.addEventListener("click", function (e) {
@@ -311,4 +212,4 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("modal-talles").textContent = data.talles;
     document.getElementById("modal-colores").textContent = data.colores;
   });
-}); // fin del DOMContentLoaded
+});
