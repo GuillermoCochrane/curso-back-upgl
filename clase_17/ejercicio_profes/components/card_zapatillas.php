@@ -4,7 +4,6 @@
 			src=<?= isset($imagen) ? $imagen : "./img/generica.jpg" ?>
 			class="card-img-top p-3 bg-white"
 			alt="Zapatilla <?= isset($marca) ? $marca : "Generica" ?>"
-			styñe="max-width: 350px"
 		>
 		<div class="card-body p-4 d-flex flex-column">
 			<h5 class="card-title fw-bold">
