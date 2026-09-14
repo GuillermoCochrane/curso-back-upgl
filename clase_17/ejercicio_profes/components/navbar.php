@@ -1,4 +1,4 @@
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary py-3">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary py-3">
   <div class="container">
 
     <!-- Marca -->
@@ -35,11 +35,12 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle"
-             href="#"
-             id="navbarMarcas"
-             role="button"
-             data-bs-toggle="dropdown"
-             aria-expanded="false">
+            href="#"
+            id="navbarMarcas"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             Marcas
           </a>
 

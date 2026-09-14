@@ -1,4 +1,4 @@
-<div class="col">
+<article class="col">
 	<div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
 		<img
 			src=<?= isset($imagen) ? $imagen : "./img/generica.jpg" ?>
@@ -23,4 +23,4 @@
 			</button>
 		</div>
 	</div>
-</div>
+</article>

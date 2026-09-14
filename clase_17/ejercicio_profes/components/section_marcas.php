@@ -1,4 +1,4 @@
-<div 
+<section 
   id="<?= isset($marca) ? $marca : "marca-generica" ?>" 
   class="marca-seccion pb-5 mb-4"
   >
@@ -13,4 +13,4 @@
         } 
       ?>
     </div>
-</div>
+</section>
