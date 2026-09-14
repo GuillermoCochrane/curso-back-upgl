@@ -25,6 +25,7 @@ $marca2 = "Adidas";
 $marca3 = "Puma";
 $marca4 = "Reebok";
 
+include_once("zapatillas.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
