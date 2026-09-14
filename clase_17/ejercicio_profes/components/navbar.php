@@ -45,29 +45,12 @@
           </a>
 
           <ul class="dropdown-menu" aria-labelledby="navbarMarcas">
-            <li>
-              <a class="dropdown-item" href="#">
-                <?php echo htmlspecialchars($marca1 ?? 'Marca 1', ENT_QUOTES, 'UTF-8'); ?>
-              </a>
-            </li>
-
-            <li>
-              <a class="dropdown-item" href="#">
-                <?php echo htmlspecialchars($marca2 ?? 'Marca 2', ENT_QUOTES, 'UTF-8'); ?>
-              </a>
-            </li>
-
-            <li>
-              <a class="dropdown-item" href="#">
-                <?php echo htmlspecialchars($marca3 ?? 'Marca 3', ENT_QUOTES, 'UTF-8'); ?>
-              </a>
-            </li>
-
-            <li>
-              <a class="dropdown-item" href="#">
-                <?php echo htmlspecialchars($marca4 ?? 'Marca 4', ENT_QUOTES, 'UTF-8'); ?>
-              </a>
-            </li>
+            <?php 
+              foreach ($zapatillas ?? [] as $zapatilla) {
+                extract($zapatilla);
+                include("components/header_dropdown_item.php");
+              }
+              ?>
           </ul>
         </li>
 
@@ -78,8 +61,10 @@
         </li>
 
         <li class="nav-item ms-lg-3">
-          <a class="btn btn-light text-dark"
-             href="carrito.php">
+          <a 
+            class="btn btn-light text-dark"
+            href="carrito.php"
+          >
             <i class="fas fa-shopping-cart me-1"></i>
             Carrito
           </a>
