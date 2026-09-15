@@ -25,7 +25,7 @@
           <?php 
             foreach ($zapatillas ?? [] as $zapatilla) {
               extract($zapatilla);
-              include("components/shared/footer/links_footer.php");
+              include("components/shared/footer/footer_link_item.php");
             }
           ?>
         </div>
@@ -39,9 +39,7 @@
         <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
           <h6 class="text-uppercase mb-4 fw-bold">Contacto</h6>
-          <p><i class="fas fa-home me-2"></i> Dr Bruno 580, General Levalle.</p>
-          <p><i class="fas fa-envelope me-2"></i> info@zapateriacordon.com</p>
-          <p><i class="fas fa-phone me-2"></i> + 54 9 3385 405049</p>
+          <?php include_once("components/shared/footer/footer_contact_handler.php"); ?>
         </div>
         <!-- Grid column -->
 
