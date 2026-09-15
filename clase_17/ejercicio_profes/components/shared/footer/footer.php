@@ -25,7 +25,7 @@
           <?php 
             foreach ($zapatillas ?? [] as $zapatilla) {
               extract($zapatilla);
-              include("components/links_footer.php");
+              include("components/shared/footer/links_footer.php");
             }
           ?>
         </div>

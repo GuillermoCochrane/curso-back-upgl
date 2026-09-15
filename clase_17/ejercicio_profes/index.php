@@ -27,6 +27,6 @@ require_once("zapatillas.php");
 <?php include_once("components/header.php"); ?>
 <?php include_once("components/navbar.php"); ?>
 <?php include_once("pages/tienda_de_zapatillas.php"); ?>
-<?php include_once("components/footer.php"); ?>
+<?php include_once("components/shared/footer/footer.php"); ?>
 
 </html>
