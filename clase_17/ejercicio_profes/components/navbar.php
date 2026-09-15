@@ -13,63 +13,15 @@
             data-bs-target="#navbarCordón"
             aria-controls="navbarCordón"
             aria-expanded="false"
-            aria-label="Toggle navigation">
+            aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Links -->
     <div class="collapse navbar-collapse" id="navbarCordón">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-        <li class="nav-item">
-          <a class="nav-link active" href="index.php">
-            Inicio
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="productos.php">
-            Productos
-          </a>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarMarcas"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Marcas
-          </a>
-
-          <ul class="dropdown-menu" aria-labelledby="navbarMarcas">
-            <?php 
-              foreach ($zapatillas ?? [] as $zapatilla) {
-                extract($zapatilla);
-                include("components/header_dropdown_item.php");
-              }
-              ?>
-          </ul>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="contacto.php">
-            Contacto
-          </a>
-        </li>
-
-        <li class="nav-item ms-lg-3">
-          <a 
-            class="btn btn-light text-dark"
-            href="carrito.php"
-          >
-            <i class="fas fa-shopping-cart me-1"></i>
-            Carrito
-          </a>
-        </li>
-
+        <?php include("components/nav/nav_builder.php"); ?>
       </ul>
     </div>
 

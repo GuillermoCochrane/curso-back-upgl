@@ -20,10 +20,6 @@ Cada zapatilla tiene que tener:
 - Stock
 
  */
-$marca1 = "Nike";
-$marca2 = "Adidas";
-$marca3 = "Puma";
-$marca4 = "Reebok";
 require_once("zapatillas.php");
 ?>
 <!DOCTYPE html>
