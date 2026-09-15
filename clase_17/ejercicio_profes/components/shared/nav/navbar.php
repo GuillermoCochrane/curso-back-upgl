@@ -21,7 +21,7 @@
     <!-- Links -->
     <div class="collapse navbar-collapse" id="navbarCordón">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <?php include("components/nav/nav_builder.php"); ?>
+        <?php include("components/shared/nav/nav_builder.php"); ?>
       </ul>
     </div>
 

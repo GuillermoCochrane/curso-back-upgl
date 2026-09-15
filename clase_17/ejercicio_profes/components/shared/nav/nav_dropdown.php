@@ -13,7 +13,7 @@
     <?php 
       foreach ($dropdown_items ?? [] as $dropdown_item) {
         extract($dropdown_item);
-        include("components/header_dropdown_item.php");
+        include("components/shared/nav/nav_dropdown_item.php");
       }
       ?>
   </ul>

@@ -35,9 +35,9 @@
   function render_nav_items($nav_item=[]) {
     extract($nav_item);
     if ($isDropdown) {
-      include("components/nav/nav_dropdown.php");
+      include("components/shared/nav/nav_dropdown.php");
     } else {
-      include("components/nav/nav_item.php");
+      include("components/shared/nav/nav_item.php");
     }
   }
 
