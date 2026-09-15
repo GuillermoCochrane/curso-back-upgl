@@ -87,11 +87,12 @@
     </button>
     <div class="collapse navbar-collapse" id="menuMarcas">
       <div class="navbar-nav ms-auto text-center gap-lg-3">
-        <a class="nav-link" href="#nike">Nike</a>
-        <a class="nav-link" href="#adidas">Adidas</a>
-        <a class="nav-link" href="#topper">Topper</a>
-        <a class="nav-link" href="#newbalance">New Balance</a>
-        <a class="nav-link" href="#jaguar">Jaguar</a>
+        <?php
+          foreach ($zapatillas ?? [] as $zapatilla) {
+            extract($zapatilla);
+            include("components/zapatillas/link_marcas.php");
+          }
+        ?>
       </div>
     </div>
   </div>
