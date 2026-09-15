@@ -104,7 +104,7 @@
     <h2 class="display-6 fw-bold mt-2">Un estilo para cada paso.</h2>
     <p class="text-body-secondary mb-0">Explorá nuestras marcas y conocé los detalles de cada modelo.</p>
   </div>
-  <?php include_once("components/marcas_y_zapas.php"); ?>
+  <?php include_once("components/zapatillas/marcas_y_zapas.php"); ?>
 </main>
 <!-- Modal de detalles de zapatilla -->
 <div 
