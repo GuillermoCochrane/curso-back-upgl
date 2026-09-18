@@ -1,0 +1,99 @@
+/* Colores de la marca sobre los componentes de Bootstrap. */
+.sorpresa-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #090909;
+    cursor: pointer;
+}
+
+.sorpresa-modal svg {
+    width: 90vw;
+    height: 94vh;
+}
+
+body {
+    color: #35251e;
+    background-color: #fffdf9;
+}
+
+.bg-dark {
+    background-color: #35251e !important;
+}
+
+.bg-light {
+    background-color: #fbf6f0 !important;
+}
+
+.bg-body-tertiary {
+    background-color: #f5eee5 !important;
+}
+
+.text-primary {
+    color: #75482f !important;
+}
+
+.text-warning {
+    color: #e6c9a7 !important;
+}
+
+.text-body-secondary {
+    color: #706056 !important;
+}
+
+.border-warning {
+    border-color: #e6c9a7 !important;
+}
+
+.text-bg-warning {
+    color: #35251e !important;
+    background-color: #e6c9a7 !important;
+}
+
+.card, .modal-content {
+    color: #35251e;
+    background-color: #fffdf9;
+}
+
+/* Botones: normal, al pasar el mouse, al seleccionar y con teclado. */
+.btn-primary {
+    color: #fff;
+    background-color: #75482f;
+    border-color: #75482f;
+}
+
+.btn-primary:hover, .btn-primary:focus-visible, .btn-primary:active {
+    color: #fff !important;
+    background-color: #603b27 !important;
+    border-color: #603b27 !important;
+}
+
+.btn-warning {
+    color: #35251e;
+    background-color: #e6c9a7;
+    border-color: #e6c9a7;
+}
+
+.btn-warning:hover, .btn-warning:focus-visible, .btn-warning:active {
+    color: #35251e !important;
+    background-color: #edd5ba !important;
+    border-color: #edd5ba !important;
+}
+
+.btn-outline-dark {
+    color: #35251e;
+    border-color: #35251e;
+}
+
+.btn-outline-dark:hover, .btn-outline-dark:focus-visible, .btn-outline-dark:active {
+    color: #fff !important;
+    background-color: #35251e !important;
+    border-color: #35251e !important;
+}
+
+.btn-primary:focus-visible, .btn-warning:focus-visible, .btn-outline-dark:focus-visible {
+    box-shadow: 0 0 0 .25rem rgba(117, 72, 47, .35);
+}
