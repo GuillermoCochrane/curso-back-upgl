@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "nombre": "Manzana",
+        "icono": "🍎",
+        "imagen": "https:\/\/images.unsplash.com\/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=200&q=80"
+    },
+    {
+        "id": 2,
+        "nombre": "Banana",
+        "icono": "🍌",
+        "imagen": "https:\/\/images.unsplash.com\/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&w=200&q=80"
+    },
+    {
+        "id": 3,
+        "nombre": "Naranja",
+        "icono": "🍊",
+        "imagen": "https:\/\/images.unsplash.com\/photo-1611080626919-7cf5a9dbab5b?auto=format&fit=crop&w=200&q=80"
+    }
+]

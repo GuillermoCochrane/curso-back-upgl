@@ -1,0 +1,250 @@
+/* ==============================================================================
+   ESTILOS GENERALES (RESET Y TIPOGRAFÍA)
+   ============================================================================== */
+
+/* :root representa el elemento raíz (la etiqueta <html>).
+   Aquí definimos la fuente predeterminada del sistema, el color de fondo y el color del texto. */
+:root {
+    color-scheme: light;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #24352e;
+    background: #f3f8f2;
+}
+
+/* El body contiene todo el contenido visible.
+   max-width: limita el ancho a 900px para que no se estire demasiado en pantallas grandes.
+   margin: 0 auto; centra la página horizontalmente.
+   padding: añade espacio interior (arriba/abajo y a los lados). */
+body {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 16px;
+}
+
+/* Títulos principales y secundarios */
+h1,
+h2 {
+    color: #245b3b;
+}
+
+/* ==============================================================================
+   COMPONENTES: TARJETAS (CARDS)
+   ============================================================================== */
+
+/* .tarjeta crea contenedores blancos con bordes redondeados y una sombra suave */
+.tarjeta {
+    background: white;
+    padding: 20px;
+    margin: 16px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(24, 59, 37, 0.07);
+}
+
+/* ==============================================================================
+   FORMULARIOS Y BOTONES
+   ============================================================================== */
+
+/* display: flex alinea los campos del formulario en una fila horizontal.
+   gap: crea una separación uniforme de 8px entre cada campo y botón.
+   flex-wrap: wrap permite que pasen a la siguiente línea si no entran. */
+form {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Estilo para todos los campos de texto del formulario */
+input {
+    padding: 10px;
+    border: 1px solid #b9c9bc;
+    border-radius: 7px;
+    font: inherit;
+}
+
+/* flex: 1 hace que el campo de texto se expanda para ocupar el espacio libre disponible */
+input[type="text"] {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Estilos compartidos para botones (<button>) y enlaces con clase (.boton) */
+button,
+.boton {
+    background: #267447;
+    color: white;
+    border: 0;
+    padding: 10px 14px;
+    border-radius: 7px;
+    font: inherit;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Variaciones de color para botones */
+.secundario {
+    background: #52665a;
+}
+
+.peligro {
+    background: #a33e36;
+}
+
+/* ==============================================================================
+   LISTA DE ELEMENTOS (FILAS Y MINIATURAS)
+   ============================================================================== */
+
+/* Cada fruta en la lista es una .fila flexible */
+.fila {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e6eee7;
+}
+
+/* Imagen de miniatura de la fruta:
+   object-fit: cover asegura que la imagen no se deforme ni se estire, recortándola si es necesario. */
+.miniatura {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #edf3ed;
+}
+
+/* Texto del nombre e icono de la fruta */
+.fruta {
+    flex: 1;
+    font-size: 1.1rem;
+}
+
+/* Contenedor para agrupar los botones de acción (Modificar / Eliminar) */
+.acciones {
+    display: flex;
+    gap: 7px;
+}
+
+/* Cartel de mensaje de éxito o aviso (por ejemplo: "Fruta agregada.") */
+.mensaje {
+    padding: 10px;
+    background: #e4f4e8;
+    border-radius: 7px;
+}
+
+/* Texto explicativo secundario */
+.ayuda {
+    color: #506257;
+    line-height: 1.55;
+}
+
+/* ==============================================================================
+   COMPONENTE: TARJETA DE FRUTA (CARD) Y REJILLA (GRID)
+   ============================================================================== */
+
+/* .grid-frutas organiza las tarjetas en una cuadrícula automática y responsiva.
+   repeat(auto-fill, minmax(220px, 1fr)) calcula cuántas columnas caben y las ajusta solas. */
+.grid-frutas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 14px;
+}
+
+/* .card-fruta representa el contenedor de cada fruta individual */
+.card-fruta {
+    background: white;
+    border: 1px solid #d0dfd2;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 16px rgba(24, 59, 37, 0.12), 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Efecto al pasar el mouse por encima (hover): se eleva con una sombra más profunda y definida */
+.card-fruta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(24, 59, 37, 0.20), 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Imagen de la tarjeta */
+.card-fruta-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    background: #edf3ed;
+    display: block;
+}
+
+/* Si la fruta no tiene foto, mostramos un recuadro suave con el emoji en grande */
+.card-fruta-img-placeholder {
+    width: 100%;
+    height: 160px;
+    background: #eaf2eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+}
+
+/* Cuerpo de la tarjeta con título y acciones */
+.card-fruta-cuerpo {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 14px;
+}
+
+/* Título con icono y nombre */
+.card-fruta-titulo {
+    margin: 0;
+    font-size: 1.15rem;
+    color: #24352e;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card-fruta-icono {
+    font-size: 1.3rem;
+}
+
+/* Contenedor de botones (Modificar / Eliminar) */
+.card-fruta-acciones {
+    display: flex;
+    gap: 8px;
+    margin-top: auto; /* Empuja los botones siempre hacia el fondo de la tarjeta */
+}
+
+/* Hacemos que los botones ocupen el mismo ancho */
+.card-fruta-acciones .boton,
+.card-fruta-acciones form {
+    flex: 1;
+    display: flex;
+}
+
+.card-fruta-acciones form button {
+    width: 100%;
+}
+
+/* ==============================================================================
+   DISEÑO RESPONSIVO (MÓVILES / PANTALLAS PEQUEÑAS)
+   ============================================================================== */
+
+/* Si la pantalla mide 520px o menos, adaptamos los elementos para que se lean bien */
+@media (max-width: 520px) {
+    .fila {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .acciones {
+        width: 100%;
+    }
+}
