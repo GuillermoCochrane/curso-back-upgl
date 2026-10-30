@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "nombre": "Chatita",
+        "icono": "vans",
+        "imagen": "https:\/\/production.cdn.vaypol.com\/variants\/xfgpv10rfzbxcpkpce44kj8n5yru\/b705b1e3c6fbc9dd90919abc47ece3cfcd5d3ee0634923198c4a45ce52e2fb40"
+    },
+    {
+        "id": 2,
+        "nombre": "fueranike",
+        "icono": "Nike",
+        "imagen": ""
+    },
+    {
+        "id": 3,
+        "nombre": "Nike Dumk Low",
+        "icono": "Nike",
+        "imagen": "https:\/\/nikearprod.vtexassets.com\/arquivos\/ids\/378645\/DD1503_101_A_PREM.jpg?v=638138925244870000"
+    },
+    {
+        "id": 4,
+        "nombre": "Air Force One",
+        "icono": "Nike",
+        "imagen": ""
+    }
+]
