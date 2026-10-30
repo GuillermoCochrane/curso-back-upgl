@@ -140,7 +140,7 @@
 
   // Funciones de Renderizado de Card de fruta
   function renderizarCardFruta(array $fruta): void {
-    include __DIR__ . '/card-fruta.php';
+    include __DIR__ . '/../views/partials/card-fruta.php';
   }
 
 ?>

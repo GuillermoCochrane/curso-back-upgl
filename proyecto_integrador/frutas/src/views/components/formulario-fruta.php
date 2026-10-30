@@ -1,5 +1,5 @@
 <?php
-$frutaEditar = $frutaEditar ?? null;
+  $frutaEditar = $frutaEditar ?? null;
 ?>
 <section class="tarjeta">
   <h2><?= $frutaEditar ? 'Modificar fruta' : 'Agregar una fruta' ?></h2>

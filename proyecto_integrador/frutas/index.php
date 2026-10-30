@@ -1,5 +1,5 @@
 <?php
-  require_once __DIR__ . '/componentes/inicio.php'; // Prepara todos los datos y funciones necesarias para la página
+  require_once __DIR__ . '/src/utilities/inicio.php'; // Prepara todos los datos y funciones necesarias para la página
 ?>
 <!-- template base (nas adelante lo modularizare por secciones y secciones en componentes) -->
 <!doctype html>
@@ -23,7 +23,7 @@
   <?php endif; ?>
 
   <?php
-    require_once __DIR__ . '/componentes/formulario-fruta.php';
+    require_once __DIR__ . '/src/views/components/formulario-fruta.php';
     // template del formulario de alta y modificación de frutas
   ?>
 
@@ -43,8 +43,8 @@
   </section>
 
   <?php
-  require_once __DIR__ . '/componentes/lista-frutas.php';
-  // renderiza la lista de frutas (completa o filtrada por búsqueda)
+    require_once __DIR__ . '/src/views/components/lista-frutas.php';
+    // renderiza la lista de frutas (completa o filtrada por búsqueda)
   ?>
 
 </body>

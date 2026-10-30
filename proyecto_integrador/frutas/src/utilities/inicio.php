@@ -2,7 +2,7 @@
     declare(strict_types=1); // Setea tipado fuerte para todo el archivo
     require_once __DIR__ . '/funciones.php'; // importamos una sola vez las funciones auxiliares 
 
-    $archivo = dirname(__DIR__) . '/datos/frutas.json'; // ruta de la DB de frutas
+    $archivo = dirname(__DIR__) . '/data/frutas.json'; // ruta de la DB de frutas
     $carpetaDatos = dirname($archivo);  // Carpeta de almacenamiento de DB
     $frutas = cargarFrutas($archivo, $frutasIniciales); // ejecuta funcion auxiliar para cargar frutas desde archivo JSON
     $mensaje = ''; // setea mensaje vacío
