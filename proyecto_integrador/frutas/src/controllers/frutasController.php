@@ -7,6 +7,7 @@
     $frutas = cargarFrutas($archivo, $frutasIniciales ?? []); // ejecuta funcion auxiliar para cargar frutas desde archivo JSON
     $mensaje = ''; // setea mensaje vacío
 
+
 		// Controlador
     if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') { // si llega un post...
         $accion = $_POST['accion'] ?? ''; // recuperamos la acción a realizar, y si no hay, la dejamos vacía
@@ -21,20 +22,16 @@
         }
 
 				// Dependiendo de la acción, llamamos a la función correspondiente para agregar, modificar o eliminar una fruta y seteamos el mensaje 
-        if ($accion === 'agregar' && $mensaje === '') {
-            $mensaje = agregarFruta($archivo, $frutas, $nombre, $icono, $imagen);
-        }
-
-        if ($accion === 'modificar' && $mensaje === '') {
-            $id = recuperarPostID();
-            $mensaje = modificarFruta($archivo, $frutas, $id, $nombre, $icono, $imagen);
-        }
-
-        if ($accion === 'eliminar') {
-            $id = recuperarPostID();
-            $mensaje = eliminarFruta($archivo, $frutas, $id);
+        if($mensaje === '') {
+            $mensaje = match ($accion) {
+                'agregar'   => agregarFruta($archivo, $frutas, $nombre, $icono, $imagen),
+                'modificar' => modificarFruta($archivo, $frutas, recuperarPostID(), $nombre, $icono, $imagen),
+                'eliminar'  => eliminarFruta($archivo, $frutas, recuperarPostID()),
+                default     => 'Acción no válida'
+            };
         }
     }
+
 
 		// Recuperamos el valor de búsqueda desde la URL y los sanitizamos (otra vez no deberia escapar?)
     $busqueda = trim((string) ($_GET['buscar'] ?? ''));
