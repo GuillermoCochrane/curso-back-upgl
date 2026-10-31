@@ -17,9 +17,7 @@
         $imagen = sanitizarPost('imagen');
 
 				// Verificamos que la URL de la imagen sea válida, y seteamos el mensaje 
-        if ($imagen !== '' && filter_var($imagen, FILTER_VALIDATE_URL) === false) {
-            $mensaje = 'El link de la imagen debe ser una URL válida (por ejemplo, empezar con https://).';
-        }
+        $mensaje = validarImagen($imagen);
 
 				// Dependiendo de la acción, llamamos a la función correspondiente para agregar, modificar o eliminar una fruta y seteamos el mensaje 
         if($mensaje === '') {
