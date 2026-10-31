@@ -3,6 +3,7 @@
 
   require_once __DIR__ . '/frutasRepository.php';
   require_once __DIR__ . '/validations.php';
+  require_once __DIR__ . '/utilities.php';
 
   // Funciones de Carga de datos nuevos
   function agregarFruta(string $archivo, array &$frutas, string $nombre, string $icono, string $imagen): string {
@@ -87,19 +88,6 @@
     return array_values(array_filter($frutas, function ($fruta) use ($busqueda) {
       return stripos($fruta['nombre'], $busqueda) !== false; // no se que hace stripos
     }));
-  }
-
-  function recuperarPostID(): int {
-    return (int) ($_POST['id'] ?? 0);
-  }
-
-  function recuperarGetID(): int {
-    return (int) ($_GET['editar'] ?? 0);
-  }
-
-  // Funciones de Renderizado de Card de fruta
-  function renderizarCardFruta(array $fruta): void {
-    include __DIR__ . '/../views/partials/card-fruta.php';
   }
 
 ?>
