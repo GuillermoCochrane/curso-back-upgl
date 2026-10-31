@@ -11,9 +11,9 @@
     if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') { // si llega un post...
         $accion = $_POST['accion'] ?? ''; // recuperamos la acción a realizar, y si no hay, la dejamos vacía
         //Guardamos el nombre, icono e imagen de la fruta, sanitizando los valores recibidos
-				$nombre = trim((string) ($_POST['nombre'] ?? '')); //no deberia usar escapar?
-        $icono = trim((string) ($_POST['icono'] ?? ''));
-        $imagen = trim((string) ($_POST['imagen'] ?? ''));
+				$nombre = sanitizarPost('nombre');
+        $icono = sanitizarPost('icono');
+        $imagen = sanitizarPost('imagen');
 
 				// Verificamos que la URL de la imagen sea válida, y seteamos el mensaje 
         if ($imagen !== '' && filter_var($imagen, FILTER_VALIDATE_URL) === false) {

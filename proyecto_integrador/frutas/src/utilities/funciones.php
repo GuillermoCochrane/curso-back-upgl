@@ -143,4 +143,15 @@
     include __DIR__ . '/../views/partials/card-fruta.php';
   }
 
+  function sanitizarEntrada(?string $entrada): string {
+      $entrada = (string) ($entrada ?? '');
+      $entrada = strip_tags($entrada); 
+      $entrada = trim($entrada);
+      return $entrada;
+  }
+
+  function sanitizarPost(string $key): string {
+      return sanitizarEntrada($_POST[$key] ?? null);
+  }
+
 ?>
