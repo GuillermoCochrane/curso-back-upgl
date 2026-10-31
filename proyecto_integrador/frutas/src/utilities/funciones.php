@@ -2,11 +2,7 @@
   declare(strict_types=1);// Setea tipado fuerte para todo el archivo
 
   require_once __DIR__ . '/frutasRepository.php';
-
-  // Sanitizador de Datos
-  function escapar(string $texto): string {
-    return htmlspecialchars($texto, ENT_QUOTES, 'UTF-8');
-  }
+  require_once __DIR__ . '/validations.php';
 
   // Funciones de Carga de datos nuevos
   function agregarFruta(string $archivo, array &$frutas, string $nombre, string $icono, string $imagen): string {
@@ -22,7 +18,6 @@
 
     return 'Fruta agregada.'; // Notifica
   }
-
 
   // Funciones de Edicion de frutas
   function modificarFruta(string $archivo, array &$frutas, int $id, string $nombre, string $icono, string $imagen): string {
@@ -47,7 +42,6 @@
     guardarFrutas($archivo, $frutas); // Actualiza la DB
     return 'Fruta modificada.'; // Notifica
   }
-
 
   // Funciones de Eliminación de frutas
   function eliminarFruta(string $archivo, array &$frutas, int $id): string {
@@ -82,7 +76,6 @@
     return null; // si no encuentra la fruta, devuelve null
   }
 
-
   // Funciones de Filtrado por nombre 
   function filtrarFrutas(array $frutas, string $busqueda): array {
     // valida si la busqueda es vacia, y si lo es, devuelve todas las frutas
@@ -96,26 +89,6 @@
     }));
   }
 
-  // Funciones de Renderizado de Card de fruta
-  function renderizarCardFruta(array $fruta): void {
-    include __DIR__ . '/../views/partials/card-fruta.php';
-  }
-
-  function sanitizarEntrada(?string $entrada): string {
-      $entrada = (string) ($entrada ?? '');
-      $entrada = strip_tags($entrada); 
-      $entrada = trim($entrada);
-      return $entrada;
-  }
-
-  function sanitizarPost(string $key): string {
-      return sanitizarEntrada($_POST[$key] ?? null);
-  }
-
-  function sanitizarGet(string $key): string {
-      return sanitizarEntrada($_GET[$key] ?? null);
-  }
-
   function recuperarPostID(): int {
     return (int) ($_POST['id'] ?? 0);
   }
@@ -124,11 +97,9 @@
     return (int) ($_GET['editar'] ?? 0);
   }
 
-  function validarImagen(string $imagen): string {
-      if ($imagen !== '' && filter_var($imagen, FILTER_VALIDATE_URL) === false) {
-          return 'El link de la imagen debe ser una URL válida (por ejemplo, empezar con https://).';
-      }
-      return ''; 
-}
+  // Funciones de Renderizado de Card de fruta
+  function renderizarCardFruta(array $fruta): void {
+    include __DIR__ . '/../views/partials/card-fruta.php';
+  }
 
 ?>
