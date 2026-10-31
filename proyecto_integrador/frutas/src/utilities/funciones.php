@@ -130,14 +130,6 @@
     }));
   }
 
-  // Funciones de Resumen de nombres de frutas
-  function obtenerResumenFrutas(array $frutas): array {
-    //recorre el array de frutas y genera un nuevo array son una string
-    return array_map(function ($fruta) {
-      return $fruta['icono'] . ' ' . $fruta['nombre'];
-    }, $frutas);
-  }
-
   // Funciones de Renderizado de Card de fruta
   function renderizarCardFruta(array $fruta): void {
     include __DIR__ . '/../views/partials/card-fruta.php';

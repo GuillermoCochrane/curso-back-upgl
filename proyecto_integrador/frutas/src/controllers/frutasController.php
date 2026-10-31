@@ -3,7 +3,6 @@
     require_once __DIR__ . '/../utilities/funciones.php'; // importamos una sola vez las funciones auxiliares 
 
     $archivo = dirname(__DIR__) . '/data/frutas.json'; // ruta de la DB de frutas
-    $carpetaDatos = dirname($archivo);  // Carpeta de almacenamiento de DB
     $frutas = cargarFrutas($archivo, $frutasIniciales ?? []); // ejecuta funcion auxiliar para cargar frutas desde archivo JSON
     $mensaje = ''; // setea mensaje vacío
 
@@ -34,7 +33,6 @@
 		// Recuperamos el valor de búsqueda desde la URL y los sanitizamos (otra vez no deberia escapar?)
     $busqueda = trim((string) ($_GET['buscar'] ?? ''));
     $frutasVisibles = filtrarFrutas($frutas, $busqueda); // filtramos las frutas según la búsqueda
-    $nombresParaResumen = obtenerResumenFrutas($frutas); // armamos un resumen de nombres de frutas para mostrar en la lista
 
     $frutaEditar = buscarFrutaPorId($frutas, (int) ($_GET['editar'] ?? 0)); // recuperamos la fruta a editar según el id del get
 ?>
