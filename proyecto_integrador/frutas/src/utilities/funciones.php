@@ -146,6 +146,10 @@
       return sanitizarEntrada($_POST[$key] ?? null);
   }
 
+  function sanitizarGet(string $key): string {
+      return sanitizarEntrada($_GET[$key] ?? null);
+  }
+
   function recuperarPostID(): int {
     return (int) ($_POST['id'] ?? 0);
   }

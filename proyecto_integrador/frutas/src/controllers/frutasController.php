@@ -31,7 +31,7 @@
 
 
 		// Recuperamos el valor de búsqueda desde la URL y los sanitizamos (otra vez no deberia escapar?)
-    $busqueda = trim((string) ($_GET['buscar'] ?? ''));
+    $busqueda = sanitizarGet('buscar');
     $frutasVisibles = filtrarFrutas($frutas, $busqueda); // filtramos las frutas según la búsqueda
 
     $frutaEditar = buscarFrutaPorId($frutas, (int) ($_GET['editar'] ?? 0)); // recuperamos la fruta a editar según el id del get
