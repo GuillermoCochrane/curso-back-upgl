@@ -26,12 +26,12 @@
         }
 
         if ($accion === 'modificar' && $mensaje === '') {
-            $id = (int) ($_POST['id'] ?? 0);
+            $id = recuperarPostID();
             $mensaje = modificarFruta($archivo, $frutas, $id, $nombre, $icono, $imagen);
         }
 
         if ($accion === 'eliminar') {
-            $id = (int) ($_POST['id'] ?? 0);
+            $id = recuperarPostID();
             $mensaje = eliminarFruta($archivo, $frutas, $id);
         }
     }

@@ -154,4 +154,8 @@
       return sanitizarEntrada($_POST[$key] ?? null);
   }
 
+  function recuperarPostID(): int {
+    return (int) ($_POST['id'] ?? 0);
+  }
+
 ?>
