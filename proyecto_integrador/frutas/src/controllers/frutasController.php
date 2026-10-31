@@ -16,8 +16,9 @@
         $imagen = sanitizarPost('imagen');
 
 				// Verificamos que la URL de la imagen sea válida, y seteamos el mensaje 
-        $mensaje = validarImagen($imagen);
-
+      if ($accion === 'agregar' || $accion === 'modificar') {
+          $mensaje = validarImagen($imagen);
+      }
 				// Dependiendo de la acción, llamamos a la función correspondiente para agregar, modificar o eliminar una fruta y seteamos el mensaje 
         if($mensaje === '') {
             $mensaje = match ($accion) {
@@ -30,7 +31,7 @@
     }
 
 
-		// Recuperamos el valor de búsqueda desde la URL y los sanitizamos (otra vez no deberia escapar?)
+		// Recuperamos el valor de búsqueda desde la URL y los sanitizamos
     $busqueda = sanitizarGet('buscar');
     $frutasVisibles = filtrarFrutas($frutas, $busqueda); // filtramos las frutas según la búsqueda
 
