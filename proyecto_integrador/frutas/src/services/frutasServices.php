@@ -1,9 +1,7 @@
 <?php
   declare(strict_types=1);// Setea tipado fuerte para todo el archivo
 
-  require_once __DIR__ . '/frutasRepository.php';
-  require_once __DIR__ . '/validations.php';
-  require_once __DIR__ . '/utilities.php';
+  require_once __DIR__ . '/../utilities/frutasRepository.php';
 
   // Funciones de Carga de datos nuevos
   function agregarFruta(string $archivo, array &$frutas, string $nombre, string $icono, string $imagen): string {

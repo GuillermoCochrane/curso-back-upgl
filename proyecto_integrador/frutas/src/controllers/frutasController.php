@@ -1,6 +1,10 @@
 <?php
     declare(strict_types=1); // Setea tipado fuerte para todo el archivo
-    require_once __DIR__ . '/../utilities/funciones.php'; // importamos una sola vez las funciones auxiliares 
+
+    // importamos una sola vez las funciones auxiliares 
+    require_once __DIR__ . '/../services/frutasServices.php'; 
+    require_once __DIR__ . '/../utilities/validations.php';
+    require_once __DIR__ . '/../utilities/utilities.php';
 
     $archivo = dirname(__DIR__) . '/data/frutas.json'; // ruta de la DB de frutas
     $frutas = cargarFrutas($archivo, $frutasIniciales ?? []); // ejecuta funcion auxiliar para cargar frutas desde archivo JSON
