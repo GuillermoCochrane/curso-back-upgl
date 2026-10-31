@@ -154,12 +154,15 @@
     return (int) ($_POST['id'] ?? 0);
   }
 
-  // En funciones.php
+  function recuperarGetID(): int {
+    return (int) ($_GET['editar'] ?? 0);
+  }
+
   function validarImagen(string $imagen): string {
       if ($imagen !== '' && filter_var($imagen, FILTER_VALIDATE_URL) === false) {
           return 'El link de la imagen debe ser una URL válida (por ejemplo, empezar con https://).';
       }
-      return ''; // Si está todo bien, no hay error
+      return ''; 
 }
 
 ?>

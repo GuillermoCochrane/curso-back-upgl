@@ -34,5 +34,5 @@
     $busqueda = sanitizarGet('buscar');
     $frutasVisibles = filtrarFrutas($frutas, $busqueda); // filtramos las frutas según la búsqueda
 
-    $frutaEditar = buscarFrutaPorId($frutas, (int) ($_GET['editar'] ?? 0)); // recuperamos la fruta a editar según el id del get
+    $frutaEditar = buscarFrutaPorId($frutas, recuperarGetID() ); // recuperamos la fruta a editar según el id del get
 ?>
