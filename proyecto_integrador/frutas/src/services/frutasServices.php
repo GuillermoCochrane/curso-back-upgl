@@ -5,7 +5,7 @@
   require_once __DIR__ . '/../utilities/validations.php';
 
   // Funciones de Carga de datos nuevos
-  function agregarFruta(string $archivo, array &$frutas, string $nombre, string $icono, string $imagen): string {
+  function agregarFruta(string $archivo, array $frutas, string $nombre, string $icono, string $imagen): array {
     // Validación de campos obligatorios
     $validacion = validarCamposRequeridos([
         'nombre' => $nombre,
@@ -13,7 +13,7 @@
     ]);
 
     if ($validacion !== '') {
-      return $validacion;
+      return ["frutas" => $frutas, "mensaje" => $validacion];
     }
 
     $ids = array_column($frutas, 'id'); // arma un array con los ids de la  frutas en la DB
@@ -21,7 +21,7 @@
     $frutas[] = ['id' => $nuevoId, 'nombre' => $nombre, 'icono' => $icono, 'imagen' => $imagen]; //crea los datos del nuevo registro y los agrega al array de frutas (seria como un push de javascript?)
     guardarFrutas($archivo, $frutas); // Actializa la DB
 
-    return 'Fruta agregada.'; // Notifica
+    return ["frutas" => $frutas, "mensaje" => 'Fruta agregada.']; 
   }
 
   // Funciones de Edicion de frutas
