@@ -2,12 +2,18 @@
   declare(strict_types=1);// Setea tipado fuerte para todo el archivo
 
   require_once __DIR__ . '/../utilities/frutasRepository.php';
+  require_once __DIR__ . '/../utilities/validations.php';
 
   // Funciones de Carga de datos nuevos
   function agregarFruta(string $archivo, array &$frutas, string $nombre, string $icono, string $imagen): string {
     // Validación de campos obligatorios
-    if ($nombre === '' || $icono === '') {
-      return 'Completá el nombre y el icono.';
+    $validacion = validarCamposRequeridos([
+        'nombre' => $nombre,
+        'icono' => $icono
+    ]);
+
+    if ($validacion !== '') {
+      return $validacion;
     }
 
     $ids = array_column($frutas, 'id'); // arma un array con los ids de la  frutas en la DB
@@ -22,10 +28,14 @@
   function modificarFruta(string $archivo, array &$frutas, int $id, string $nombre, string $icono, string $imagen): string {
 
     // Validación de campos obligatorios
-    if ($nombre === '' || $icono === '') { 
-      return 'Completá el nombre y el icono para modificar.';
-    }
+    $validacion = validarCamposRequeridos([
+        'nombre' => $nombre,
+        'icono' => $icono
+    ]);
 
+    if ($validacion !== '') {
+      return $validacion;
+    }
 
     // recorre el array de frutas, y cuando lo encuentra el id, actualiza los datos
     foreach ($frutas as &$fruta) { //

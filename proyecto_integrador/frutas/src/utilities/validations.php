@@ -28,4 +28,11 @@
       return ''; 
   }
 
-?>
+  function validarCamposRequeridos(array $campos): string {
+    foreach ($campos as $campo => $valor) {
+      if ($valor === '') {
+        return "Debe completar el campo $campo.";
+      }
+    }
+    return '';
+  }
