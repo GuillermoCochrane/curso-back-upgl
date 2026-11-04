@@ -37,19 +37,22 @@
       return ["frutas" => $frutas, "mensaje" => $validacion];
     }
 
+    $encontrada = false; // Variable para verificar si se encontró la fruta a modificar
     // recorre el array de frutas, y cuando lo encuentra el id, actualiza los datos
     foreach ($frutas as &$fruta) { //
       if ((int) $fruta['id'] === $id) {
         $fruta['nombre'] = $nombre;
         $fruta['icono'] = $icono;
         $fruta['imagen'] = $imagen;
+        $encontrada = true; // Marca que se encontró la fruta
         break;
       }
     }
 
     unset($fruta); //elimina la variable 
-    guardarFrutas($archivo, $frutas); // Actualiza la DB
-    return ["frutas" => $frutas, "mensaje" => 'Fruta modificada.']; // Notifica
+    $mensaje = $encontrada ? 'Fruta modificada.' : 'No se encontró esa fruta.'; // Mensaje según si se encontró o no la fruta
+    if ($encontrada) { guardarFrutas($archivo, $frutas); } // Actualiza la DB
+    return ["frutas" => $frutas, "mensaje" => $mensaje]; // Notifica
   }
 
   // Funciones de Eliminación de frutas
