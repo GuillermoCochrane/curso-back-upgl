@@ -56,7 +56,7 @@
   }
 
   // Funciones de Eliminación de frutas
-  function eliminarFruta(string $archivo, array &$frutas, int $id): string {
+  function eliminarFruta(string $archivo, array $frutas, int $id): array {
     $cantidadAntes = count($frutas); // Guarda la cantidad de frutas antes de eliminar (similar a un length de javascript)
     
     $frutas = array_values(array_filter($frutas, function ($fruta) use ($id) {
@@ -65,10 +65,13 @@
       return (int) $fruta['id'] !== $id;
     }));
 
+    $eliminada = count($frutas) < $cantidadAntes; // Verifica si se eliminó alguna fruta comparando la cantidad antes y después
+
     // que ganas de complicarnos la vida al cuete, con algo que no nos dieron teoria!
     //buscar teoria de array_values y array_filter, y que hace el callback
-    guardarFrutas($archivo, $frutas); // Actualiza la DB
-    return count($frutas) < $cantidadAntes ? 'Fruta eliminada.' : 'No se encontró esa fruta.'; // Notifica si se eliminó o no
+    if ($eliminada) { guardarFrutas($archivo, $frutas); } // Actualiza la DB si se eliminó alguna fruta
+    $mensaje = $eliminada ? 'Fruta eliminada.' : 'No se encontró esa fruta.'; // Notifica si se eliminó o no
+    return ["frutas" => $frutas, "mensaje" => $mensaje];
   }
 
   // Funciones de Busqueda por id
