@@ -25,16 +25,16 @@
   }
 
   // Funciones de Edicion de frutas
-  function modificarFruta(string $archivo, array &$frutas, int $id, string $nombre, string $icono, string $imagen): string {
+  function modificarFruta(string $archivo, array $frutas, int $id, string $nombre, string $icono, string $imagen): array {
 
     // Validación de campos obligatorios
     $validacion = validarCamposRequeridos([
         'nombre' => $nombre,
-        'icono' => $icono
+        'icono' => $icono,
     ]);
 
     if ($validacion !== '') {
-      return $validacion;
+      return ["frutas" => $frutas, "mensaje" => $validacion];
     }
 
     // recorre el array de frutas, y cuando lo encuentra el id, actualiza los datos
@@ -49,7 +49,7 @@
 
     unset($fruta); //elimina la variable 
     guardarFrutas($archivo, $frutas); // Actualiza la DB
-    return 'Fruta modificada.'; // Notifica
+    return ["frutas" => $frutas, "mensaje" => 'Fruta modificada.']; // Notifica
   }
 
   // Funciones de Eliminación de frutas
