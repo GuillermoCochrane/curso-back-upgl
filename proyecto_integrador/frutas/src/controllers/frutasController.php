@@ -2,8 +2,8 @@
     declare(strict_types=1); // Setea tipado fuerte para todo el archivo
 
     // importamos una sola vez las funciones auxiliares 
-    require_once __DIR__ . '/../services/frutasServices.php'; 
     require_once __DIR__ . '/../utilities/validations.php';
+    require_once __DIR__ . '/../services/frutasServices.php'; 
     require_once __DIR__ . '/../utilities/utilities.php';
 
     $archivo = dirname(__DIR__) . '/data/frutas.json'; // ruta de la DB de frutas
@@ -23,15 +23,18 @@
       if ($accion === 'agregar' || $accion === 'modificar') {
           $mensaje = validarImagen($imagen);
       }
-				// Dependiendo de la acción, llamamos a la función correspondiente para agregar, modificar o eliminar una fruta y seteamos el mensaje 
-        if($mensaje === '') {
-            $mensaje = match ($accion) {
-                'agregar'   => agregarFruta($archivo, $frutas, $nombre, $icono, $imagen),
-                'modificar' => modificarFruta($archivo, $frutas, recuperarPostID(), $nombre, $icono, $imagen),
-                'eliminar'  => eliminarFruta($archivo, $frutas, recuperarPostID()),
-                default     => 'Acción no válida'
-            };
-        }
+
+      // Dependiendo de la acción, llamamos a la función correspondiente para agregar, modificar o eliminar una fruta y seteamos el mensaje 
+      if($mensaje === '') {
+        $resultado = match ($accion) {
+            'agregar'   => agregarFruta($archivo, $frutas, $nombre, $icono, $imagen),
+            'modificar' => modificarFruta($archivo, $frutas, recuperarPostID(), $nombre, $icono, $imagen),
+            'eliminar'  => eliminarFruta($archivo, $frutas, recuperarPostID()),
+            default     => ["frutas" => $frutas, "mensaje" => 'Acción no válida']
+        };
+        $frutas = $resultado['frutas'];
+        $mensaje = $resultado['mensaje'];
+      }
     }
 
 
