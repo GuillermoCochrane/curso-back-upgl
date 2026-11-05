@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary py-3">
+  <div class="container">
+
+    <!-- Marca -->
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.php">
+      <img src="./img/logo.png" alt="Volver al inicio" height="64" class="rounded-circle">
+      <p class="fw-bold mb-0">Zapatos <br>El Cordon</p>
+    </a>
+
+    <!-- Botón responsive -->
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCordón"
+            aria-controls="navbarCordón"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navbarCordón">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <?php include("components/shared/nav/nav_builder.php"); ?>
+      </ul>
+    </div>
+
+  </div>
+</nav>
