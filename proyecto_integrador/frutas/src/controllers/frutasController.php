@@ -40,7 +40,13 @@
 
 		// Recuperamos el valor de búsqueda desde la URL y los sanitizamos
     $busqueda = sanitizarGet('buscar');
-    $frutasVisibles = filtrarFrutas($frutas, $busqueda); // filtramos las frutas según la búsqueda
+    $resultadoFiltro = filtrarFrutas($frutas, $busqueda); // filtramos las frutas según la búsqueda
+    $frutasVisibles = $resultadoFiltro['frutas']; // las extraemos 
 
-    $frutaEditar = buscarFrutaPorId($frutas, recuperarGetID() ); // recuperamos la fruta a editar según el id del get
+    // si hubo error, lo mostramos.
+    if ($resultadoFiltro['mensaje'] !== '') {
+        $mensaje = $resultadoFiltro['mensaje'];
+    }
+
+    $frutaEditar = buscarFrutaPorId($frutas, recuperarGetID()); // recuperamos la fruta a editar según el id del get
 ?>

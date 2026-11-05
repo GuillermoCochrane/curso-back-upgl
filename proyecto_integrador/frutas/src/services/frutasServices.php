@@ -93,15 +93,21 @@
 
   // Funciones de Filtrado por nombre 
   function filtrarFrutas(array $frutas, string $busqueda): array {
-    // valida si la busqueda es vacia, y si lo es, devuelve todas las frutas
-    if ($busqueda === '') {
-      return $frutas;
-    }
+      // Si la búsqueda está vacía, devolvemos todo sin mensaje de error
+      if ($busqueda === '') {
+          return ["frutas" => $frutas, "mensaje" => ''];
+      }
 
-    // similar a lo de eliminarFruta, pero en este caso devuelve las frutas que coinciden con la busqueda
-    return array_values(array_filter($frutas, function ($fruta) use ($busqueda) {
-      return stripos($fruta['nombre'], $busqueda) !== false; // no se que hace stripos
-    }));
+      $resultado = array_values(array_filter($frutas, function ($fruta) use ($busqueda) {
+          return stripos($fruta['nombre'], $busqueda) !== false;
+      }));
+
+      // Si no se encontró nada, preparamos un mensaje
+      if (count($resultado) === 0) {
+          return ["frutas" => [], "mensaje" => "No se encontraron frutas con '$busqueda'."];
+      }
+
+      return ["frutas" => $resultado, "mensaje" => ''];
   }
 
 ?>
