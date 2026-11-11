@@ -90,7 +90,7 @@
         <?php
           foreach ($zapatillas ?? [] as $zapatilla) {
             extract($zapatilla);
-            include("components/zapatillas/link_marcas.php");
+            // include("components/zapatillas/link_marcas.php");
           }
         ?>
       </div>
@@ -105,19 +105,24 @@
     <h2 class="display-6 fw-bold mt-2">Un estilo para cada paso.</h2>
     <p class="text-body-secondary mb-0">Explorá nuestras marcas y conocé los detalles de cada modelo.</p>
   </div>
-  <?php include_once("components/zapatillas/marcas_y_zapas.php"); ?>
+  <?php 
+    // include_once("components/zapatillas/marcas_y_zapas.php"); 
+  ?>
 </main>
 
 <!-- Modal de detalles de zapatilla -->
 
-<?php include_once("components/zapatillas/zapatillas_modal.php"); ?>
+<?php 
+// include_once("components/zapatillas/zapatillas_modal.php"); 
+?>
 
 
 
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-  crossorigin="anonymous">
+  crossorigin="anonymous"
+>
 </script>
 <script src="script/carga_zapatillas.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
