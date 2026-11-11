@@ -3,7 +3,7 @@
 
     <!-- Marca -->
     <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.php">
-      <img src="./img/logo.png" alt="Volver al inicio" height="64" class="rounded-circle">
+      <img src="./public/img/logo.png" alt="Volver al inicio" height="64" class="rounded-circle">
       <p class="fw-bold mb-0">Zapatos <br>El Cordon</p>
     </a>
 
@@ -21,7 +21,7 @@
     <!-- Links -->
     <div class="collapse navbar-collapse" id="navbarCordón">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <?php /* include("components/shared/nav/nav_builder.php") */; ?>
+        <?php  include __DIR__."/nav_builder.php"; ?>
       </ul>
     </div>
 
