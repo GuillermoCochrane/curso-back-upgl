@@ -20,13 +20,13 @@ Cada zapatilla tiene que tener:
 - Stock
 
  */
-require_once("zapatillas.php");
+require_once __DIR__ . "/src/data/zapatillas.php";
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<?php include_once("components/shared/header/header.php"); ?>
-<?php include_once("components/shared/nav/navbar.php"); ?>
-<?php include_once("pages/tienda_de_zapatillas.php"); ?>
-<?php include_once("components/shared/footer/footer.php"); ?>
+<?php include_once __DIR__ ."/src/views/components/shared/head/head.php" ?>
+<?php include_once __DIR__ ."/src/views/components/shared/nav/navbar.php"; ?>
+<?php include_once __DIR__ ."/src/views/pages/tienda_de_zapatillas.php"; ?>
+<?php include_once __DIR__ ."/src/views/components/shared/footer/footer.php"; ?>
 
 </html>
