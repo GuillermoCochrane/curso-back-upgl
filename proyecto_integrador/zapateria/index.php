@@ -20,6 +20,9 @@ Cada zapatilla tiene que tener:
 - Stock
 
  */
-require_once __DIR__ . "/src/data/zapatillas.php";
-include_once __DIR__ . "/src/views/templates/main.php";
+// require_once __DIR__ . "/src/data/zapatillas.php";
+  require_once __DIR__ . "/src/controllers/mainController.php";
+  $datos = datosMainController($zapatillasDB, $marcasDB);
+  extract($datos);
+  include_once __DIR__ . "/src/views/templates/main.php";
 ?>
