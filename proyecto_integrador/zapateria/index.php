@@ -21,12 +21,5 @@ Cada zapatilla tiene que tener:
 
  */
 require_once __DIR__ . "/src/data/zapatillas.php";
+include_once __DIR__ . "/src/views/templates/main.php";
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<?php include_once __DIR__ ."/src/views/components/shared/head/head.php" ?>
-<?php include_once __DIR__ ."/src/views/components/shared/nav/navbar.php"; ?>
-<?php include_once __DIR__ ."/src/views/pages/tienda_de_zapatillas.php"; ?>
-<?php include_once __DIR__ ."/src/views/components/shared/footer/footer.php"; ?>
-
-</html>
