@@ -15,7 +15,7 @@
       "label" => "Marcas",
       "id" => "navbarMarcas",
       "isDropdown" => true,
-      "dropdown_items" => $zapatillas ?? [],
+      "dropdown_items" => $marcas ?? [],
     ],
     [
       "label" => "Contacto",
