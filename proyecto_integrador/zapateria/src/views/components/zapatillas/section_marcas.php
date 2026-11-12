@@ -9,7 +9,7 @@
       <?php
         foreach (isset($modelos) ? $modelos : [] as $modelo) {
           extract($modelo);
-          include("components/zapatillas/card_zapatillas.php");
+          // include("components/zapatillas/card_zapatillas.php");
         } 
       ?>
     </div>

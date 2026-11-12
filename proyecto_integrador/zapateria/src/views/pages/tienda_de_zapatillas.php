@@ -23,7 +23,7 @@
         <div class="ratio ratio-4x3 rounded-5 bg-light shadow overflow-hidden">
           <model-viewer 
             class="w-100 h-100"
-            id="hero-zapatilla-3d" src="img/models/zapatilla.glb"
+            id="hero-zapatilla-3d" src="./public/img/models/zapatilla.glb"
             alt="Zapatilla en 3D; arrastrá para verla desde distintos ángulos" 
             auto-rotate
             auto-rotate-delay="0" 
@@ -90,7 +90,7 @@
         <?php
           foreach ($zapatillas ?? [] as $zapatilla) {
             extract($zapatilla);
-            // include("components/zapatillas/link_marcas.php");
+            include __DIR__ . "/../partials/zapatillas/link_marcas.php";
           }
         ?>
       </div>
@@ -106,17 +106,15 @@
     <p class="text-body-secondary mb-0">Explorá nuestras marcas y conocé los detalles de cada modelo.</p>
   </div>
   <?php 
-    // include_once("components/zapatillas/marcas_y_zapas.php"); 
+    include __DIR__ . "/../components/zapatillas/marcas_y_zapas.php";
   ?>
 </main>
 
 <!-- Modal de detalles de zapatilla -->
 
 <?php 
-// include_once("components/zapatillas/zapatillas_modal.php"); 
+  include __DIR__ . "/../components/zapatillas/zapatillas_modal.php";
 ?>
-
-
 
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
@@ -124,6 +122,6 @@
   crossorigin="anonymous"
 >
 </script>
-<script src="script/carga_zapatillas.js"></script>
+<script src="./public/script/carga_zapatillas.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
-<script src="script/hero-zapatilla.js" defer></script>
+<script src="./public/script/hero-zapatilla.js" defer></script>
