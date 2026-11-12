@@ -1,8 +1,8 @@
 <p>
   <a 
     class="text-white"
-    href="#<?= $marca ?? "marca-generica" ?>"
+    href="#<?= $nombre ?? "marca-generica" ?>"
   >
-    <?= ucfirst($marca ?? "Marca Generica") ?>
+    <?= ucfirst($nombre ?? "Marca Generica") ?>
   </a>
 </p>
