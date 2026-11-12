@@ -87,12 +87,7 @@
     </button>
     <div class="collapse navbar-collapse" id="menuMarcas">
       <div class="navbar-nav ms-auto text-center gap-lg-3">
-        <?php
-          foreach ($marcas ?? [] as $marca) {
-            extract($marca);
-            include __DIR__ . "/../partials/zapatillas/link_marcas.php";
-          }
-        ?>
+        <?php include __DIR__ . "/../components/zapatillas/links_hanlder.php"; ?>
       </div>
     </div>
   </div>
