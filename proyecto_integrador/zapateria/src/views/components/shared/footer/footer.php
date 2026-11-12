@@ -18,7 +18,7 @@
         <?php 
           foreach ($zapatillas ?? [] as $zapatilla) {
             extract($zapatilla);
-            // include("components/shared/footer/footer_link_item.php");
+            include __DIR__ . "/../../../partials/footer/footer_link_item.php";
           }
         ?>
       </section>
@@ -27,21 +27,22 @@
 
       <section class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 fw-bold">Contacto</h6>
-        <?php // include_once("components/shared/footer/footer_contact_handler.php"); ?>
+        <?php include_once __DIR__ . "/footer_contact_handler.php"; ?>
       </section>
 
       <section class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 fw-bold">Seguinos!!</h6>
-        <?php // include_once("components/shared/footer/footer_social_handler.php"); ?>
+        <?php include_once __DIR__ . "/footer_social_handler.php"; ?>
       </section>
     </div>
   </div>
   <!-- Copyright -->
   <p
-    class="text-center p-4 border-top border-secondary mt-4"
+    class="text-center p-4 border-top border-secondary mt-4 mb-0"
   >
     © 2026 Copyright:
     <a class="text-white" href="https://zapatoselcordon.com.ar/">Zapatos El Cordon</a>
   </p>
 </footer>
+
 </body>
