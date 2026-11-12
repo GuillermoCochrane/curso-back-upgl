@@ -15,12 +15,7 @@
 
       <section class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 fw-bold">Productos</h6>
-        <?php 
-          foreach ($zapatillas ?? [] as $zapatilla) {
-            extract($zapatilla);
-            include __DIR__ . "/../../../partials/footer/footer_link_item.php";
-          }
-        ?>
+        <?php include_once __DIR__ . "/footer_brand_handler.php"?>
       </section>
 
       <hr class="w-100 clearfix d-md-none" />
