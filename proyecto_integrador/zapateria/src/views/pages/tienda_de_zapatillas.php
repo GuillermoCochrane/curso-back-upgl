@@ -88,8 +88,8 @@
     <div class="collapse navbar-collapse" id="menuMarcas">
       <div class="navbar-nav ms-auto text-center gap-lg-3">
         <?php
-          foreach ($zapatillas ?? [] as $zapatilla) {
-            extract($zapatilla);
+          foreach ($marcas ?? [] as $marca) {
+            extract($marca);
             include __DIR__ . "/../partials/zapatillas/link_marcas.php";
           }
         ?>
@@ -105,16 +105,12 @@
     <h2 class="display-6 fw-bold mt-2">Un estilo para cada paso.</h2>
     <p class="text-body-secondary mb-0">Explorá nuestras marcas y conocé los detalles de cada modelo.</p>
   </div>
-  <?php 
-    include __DIR__ . "/../components/zapatillas/marcas_y_zapas.php";
-  ?>
+  <?php  include __DIR__ . "/../components/zapatillas/marcas_handler.php"; ?>
 </main>
 
 <!-- Modal de detalles de zapatilla -->
 
-<?php 
-  include __DIR__ . "/../components/zapatillas/zapatillas_modal.php";
-?>
+<?php include __DIR__ . "/../components/zapatillas/zapatillas_modal.php"; ?>
 
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

@@ -1,6 +1,6 @@
 <a  
   class="nav-link" 
-  href="#<?= $marca ?? "marca-generica" ?>"
+  href="#<?= $nombre ?? "marca-generica" ?>"
 >
-  <?= ucfirst($marca ?? "Marca Generica") ?>
+  <?= htmlspecialchars(ucfirst($nombre ?? "Marca Generica"), ENT_QUOTES, 'UTF-8') ?>
 </a>
