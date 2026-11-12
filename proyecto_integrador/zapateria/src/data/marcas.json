@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "nombre": "Nike"
+  },
+  {
+    "id": 2,
+    "nombre": "Adidas"
+  },
+  {
+    "id": 3,
+    "nombre": "Topper"
+  },
+  {
+    "id": 4,
+    "nombre": "New Balance"
+  },
+  {
+    "id": 5,
+    "nombre": "Jaguar"
+  }
+]
