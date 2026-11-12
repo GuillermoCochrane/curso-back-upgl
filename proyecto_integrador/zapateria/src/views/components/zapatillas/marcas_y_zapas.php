@@ -1,6 +1,6 @@
 <?php
   foreach ( $zapatillas ?? [] as $zapatilla) {
     extract($zapatilla);
-    // include("components/zapatillas/section_marcas.php");
+    include __DIR__ . "/section_marcas.php";
   }
 ?>
