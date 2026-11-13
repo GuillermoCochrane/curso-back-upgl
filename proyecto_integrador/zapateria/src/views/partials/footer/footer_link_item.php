@@ -1,7 +1,7 @@
 <p>
   <a 
     class="text-white"
-    href="#<?= $nombre ?? "marca-generica" ?>"
+    href="#<?= $slug ?? "marca-generica" ?>"
   >
     <?= ucfirst($nombre ?? "Marca Generica") ?>
   </a>

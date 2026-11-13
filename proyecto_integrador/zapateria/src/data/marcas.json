@@ -1,22 +1,27 @@
 [
   {
     "id": 1,
-    "nombre": "Nike"
+    "nombre": "Nike",
+    "slug": "nike"
   },
   {
     "id": 2,
-    "nombre": "Adidas"
+    "nombre": "Adidas",
+    "slug": "adidas"
   },
   {
     "id": 3,
-    "nombre": "Topper"
+    "nombre": "Topper",
+    "slug": "topper"
   },
   {
     "id": 4,
-    "nombre": "New Balance"
+    "nombre": "New Balance",
+    "slug": "new-balance"
   },
   {
     "id": 5,
-    "nombre": "Jaguar"
+    "nombre": "Jaguar",
+    "slug": "jaguar"
   }
 ]
