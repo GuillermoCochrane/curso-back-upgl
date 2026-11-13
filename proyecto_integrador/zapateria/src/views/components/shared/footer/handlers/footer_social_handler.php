@@ -16,7 +16,7 @@
 
   function render_social_items($social_item=[]) {
     extract($social_item);
-    include __DIR__ . "/../../../partials/footer/footer_social_item.php";
+    include __DIR__ . "/../../../../partials/footer/footer_social_item.php";
   }
 
   foreach ($social_items as $social_item) {

@@ -16,7 +16,7 @@
 
   function render_contact_items($contact_item=[]) {
     extract($contact_item);
-    include __DIR__ . "/../../../partials/footer/footer_contact_item.php";
+    include __DIR__ . "/../../../../partials/footer/footer_contact_item.php";
   }
 
   foreach ($contact_items as $contact_item) {

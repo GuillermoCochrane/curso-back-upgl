@@ -15,19 +15,19 @@
 
       <section class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 fw-bold">Productos</h6>
-        <?php include_once __DIR__ . "/footer_brand_handler.php"?>
+        <?php include_once __DIR__ . "/handlers/footer_brand_handler.php"?>
       </section>
 
       <hr class="w-100 clearfix d-md-none" />
 
       <section class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 fw-bold">Contacto</h6>
-        <?php include_once __DIR__ . "/footer_contact_handler.php"; ?>
+        <?php include_once __DIR__ . "/handlers/footer_contact_handler.php"; ?>
       </section>
 
       <section class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 fw-bold">Seguinos!!</h6>
-        <?php include_once __DIR__ . "/footer_social_handler.php"; ?>
+        <?php include_once __DIR__ . "/handlers/footer_social_handler.php"; ?>
       </section>
     </div>
   </div>
