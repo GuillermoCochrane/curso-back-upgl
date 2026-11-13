@@ -9,6 +9,6 @@
     return [
       "zapatillas" => cargarDatos($zapatillasDB),
       "marcas" => cargarDatos($marcasDB),
-      "template" => "tienda_de_zapatillas"
+      "template" => "home"
     ];
   }

@@ -87,7 +87,7 @@
     </button>
     <div class="collapse navbar-collapse" id="menuMarcas">
       <div class="navbar-nav ms-auto text-center gap-lg-3">
-        <?php include __DIR__ . "/../components/zapatillas/links_hanlder.php"; ?>
+        <?php include __DIR__ . "/../components/zapatillas/handlers/links_handler.php"; ?>
       </div>
     </div>
   </div>
@@ -100,7 +100,7 @@
     <h2 class="display-6 fw-bold mt-2">Un estilo para cada paso.</h2>
     <p class="text-body-secondary mb-0">Explorá nuestras marcas y conocé los detalles de cada modelo.</p>
   </div>
-  <?php  include __DIR__ . "/../components/zapatillas/marcas_handler.php"; ?>
+  <?php  include __DIR__ . "/../components/zapatillas/handlers/marcas_handler.php"; ?>
 </main>
 
 <!-- Modal de detalles de zapatilla -->

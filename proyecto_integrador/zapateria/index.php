@@ -9,7 +9,7 @@ Crea un ABM que permita agregar-modificar-borrar zapatillas y mostrarlas en una 
 - footer.php
 - funciones.php
 - ABM_zapatillas.php
-- tienda_de_zapatillas.php
+- home.php
 - index.php
 Cada zapatilla tiene que tener:
 - Marca
