@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary py-3">
+<header class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom border-secondary py-3">
   <div class="container">
 
     <!-- Marca -->
@@ -19,11 +19,11 @@
     </button>
 
     <!-- Links -->
-    <div class="collapse navbar-collapse" id="navbarCordón">
+    <nav class="collapse navbar-collapse" id="navbarCordón">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
         <?php  include __DIR__."/handlers/nav_handler.php"; ?>
       </ul>
-    </div>
+    </nav>
 
   </div>
-</nav>
+</header>
