@@ -39,5 +39,3 @@
     <a class="text-white" href="https://zapatoselcordon.com.ar/">Zapatos El Cordon</a>
   </p>
 </footer>
-
-</body>

@@ -8,5 +8,3 @@
     <link rel="icon" type="image/png" href="./public/img/logo.png">
     <title>Ejercicio Integrador</title>
 </head>
-<body class="bg-body-tertiary">
-    
