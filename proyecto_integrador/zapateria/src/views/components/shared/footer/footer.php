@@ -22,7 +22,10 @@
 
       <section class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 fw-bold">Contacto</h6>
-        <?php include_once __DIR__ . "/handlers/footer_contact_handler.php"; ?>
+        <?php 
+          include_once __DIR__ . "/handlers/footer_contact_handler.php"; 
+          render_contact_items($contact_items ?? []); 
+        ?>
       </section>
 
       <section class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">

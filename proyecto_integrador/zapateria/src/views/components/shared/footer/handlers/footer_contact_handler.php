@@ -14,12 +14,9 @@
     ],
   ];
 
-  function render_contact_items($contact_item=[]) {
-    extract($contact_item);
-    include __DIR__ . "/../../../../partials/footer/footer_contact_item.php";
+  function render_contact_items($contact_items=[]) {
+    $template_path = __DIR__ . "/../../../../partials/footer/footer_contact_item";
+    foreach ($contact_items as $contact_item) {
+      render($template_path, $contact_item);
+    }
   }
-
-  foreach ($contact_items as $contact_item) {
-    render_contact_items($contact_item);
-  }
-?>
