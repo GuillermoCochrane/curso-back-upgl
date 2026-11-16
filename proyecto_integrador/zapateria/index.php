@@ -20,9 +20,8 @@ Cada zapatilla tiene que tener:
 - Stock
 
  */
-// require_once __DIR__ . "/src/data/zapatillas.php";
   require_once __DIR__ . "/src/controllers/mainController.php";
+  require_once __DIR__ . "/src/utilities/render.php";
   $datos = datosMainController($zapatillasDB, $marcasDB);
-  extract($datos);
-  include_once __DIR__ . "/src/views/templates/main.php";
+  render(__DIR__ . "/src/views/templates/main", $datos);
 ?>
