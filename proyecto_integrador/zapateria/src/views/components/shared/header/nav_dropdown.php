@@ -11,10 +11,8 @@
 
   <ul class="dropdown-menu" aria-labelledby="navbarMarcas">
     <?php 
-      foreach ($dropdown_items ?? [] as $dropdown_item) {
-        $template_path = __DIR__."/../../../partials/nav/nav_dropdown_item";
-        render($template_path, $dropdown_item);
-      }
-      ?>
+      include __DIR__."/handlers/nav_dropdown_handler.php";
+      render_nav_dropdown_items($dropdown_items ?? []);
+    ?>
   </ul>
 </li>
