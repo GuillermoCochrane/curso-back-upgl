@@ -14,7 +14,10 @@
     </button>
     <div class="collapse navbar-collapse" id="menuMarcas">
       <div class="navbar-nav ms-auto text-center gap-lg-3">
-        <?php include __DIR__ . "/handlers/links_handler.php"; ?>
+        <?php 
+          require_once __DIR__ . "/handlers/links_handler.php";
+          render_links($marcas ?? []);
+        ?>
       </div>
     </div>
   </div>
