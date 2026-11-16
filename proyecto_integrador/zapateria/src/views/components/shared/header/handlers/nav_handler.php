@@ -32,16 +32,11 @@
     ],
   ];
 
-  function render_nav_items($nav_item=[]) {
-    extract($nav_item);
-    if ($isDropdown) {
-      include __DIR__ . "/../../../../partials/nav/nav_dropdown.php";
-    } else {
-      include __DIR__ . "/../../../../partials/nav/nav_item.php";
+  function render_nav_items(array $nav_items = []): void {
+    foreach ($nav_items as $nav_item) {
+      // Decidimos el template según si es dropdown o no
+      $template_name = $nav_item['isDropdown'] ? 'nav_dropdown' : 'nav_item';
+      $template_path = __DIR__ . "/../../../../partials/nav/" . $template_name;
+      render($template_path, $nav_item);
     }
   }
-
-  foreach ($nav_items as $nav_item) {
-    render_nav_items($nav_item);
-  }
-?>
