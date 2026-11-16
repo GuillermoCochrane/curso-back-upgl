@@ -6,5 +6,8 @@
     <h2 class="display-6 fw-bold mt-2">Un estilo para cada paso.</h2>
     <p class="text-body-secondary mb-0">Explorá nuestras marcas y conocé los detalles de cada modelo.</p>
   </div>
-  <?php  include __DIR__ . "/handlers/marcas_handler.php"; ?>
+  <?php  
+    require_once __DIR__ . "/handlers/marcas_handler.php"; 
+    render_marcas($marcas ?? [], $zapatillas ?? []);
+  ?>
 </main>
