@@ -35,8 +35,10 @@
   function render_nav_items(array $nav_items = []): void {
     foreach ($nav_items as $nav_item) {
       // Decidimos el template según si es dropdown o no
-      $template_name = $nav_item['isDropdown'] ? 'nav_dropdown' : 'nav_item';
-      $template_path = __DIR__ . "/../../../../partials/nav/" . $template_name;
+      $template_item = "/../../../../partials/nav/nav_item";
+      $template_dropdown = "/../nav_dropdown";
+      $template_name = $nav_item['isDropdown'] ? $template_dropdown : $template_item;
+      $template_path = __DIR__ . $template_name;
       render($template_path, $nav_item);
     }
   }
