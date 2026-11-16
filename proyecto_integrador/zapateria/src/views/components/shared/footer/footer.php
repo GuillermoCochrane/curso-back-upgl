@@ -1,4 +1,9 @@
 <!-- Footer -->
+<?php 
+  include_once __DIR__ . "/handlers/footer_brand_handler.php"; 
+  include_once __DIR__ . "/handlers/footer_contact_handler.php"; 
+  include_once __DIR__ . "/handlers/footer_social_handler.php";
+?>
 <footer class="text-center text-lg-start text-white bg-dark pt-4">
   <div class="container p-4 pb-0">
     <div class="row">
@@ -15,25 +20,19 @@
 
       <section class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 fw-bold">Productos</h6>
-        <?php include_once __DIR__ . "/handlers/footer_brand_handler.php"?>
+        <?php render_footer_brand_items($marcas ?? []); ?>
       </section>
 
       <hr class="w-100 clearfix d-md-none" />
 
       <section class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 fw-bold">Contacto</h6>
-        <?php 
-          include_once __DIR__ . "/handlers/footer_contact_handler.php"; 
-          render_contact_items($contact_items ?? []); 
-        ?>
+        <?php render_contact_items($contact_items ?? []); ?>
       </section>
 
       <section class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 fw-bold">Seguinos!!</h6>
-        <?php 
-          include_once __DIR__ . "/handlers/footer_social_handler.php";
-          render_social_items($social_items ?? []); 
-        ?>
+        <?php render_social_items($social_items ?? []); ?>
       </section>
     </div>
   </div>
