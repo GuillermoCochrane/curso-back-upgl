@@ -27,7 +27,10 @@
 
       <section class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
         <h6 class="text-uppercase mb-4 fw-bold">Seguinos!!</h6>
-        <?php include_once __DIR__ . "/handlers/footer_social_handler.php"; ?>
+        <?php 
+          include_once __DIR__ . "/handlers/footer_social_handler.php";
+          render_social_items($social_items ?? []); 
+        ?>
       </section>
     </div>
   </div>
