@@ -2,8 +2,8 @@
   <div class="container">
 
     <!-- Marca -->
-    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.php">
-      <img src="<?= $base_path ?? "" ?>/public/img/logo.png" alt="Volver al inicio" height="64" class="rounded-circle">
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="<?= BASE_PATH ?? "" ?>/">
+      <img src="<?= BASE_PATH ?? "" ?>/public/img/logo.png" alt="Volver al inicio" height="64" class="rounded-circle">
       <p class="fw-bold mb-0">Zapatos <br>El Cordon</p>
     </a>
 

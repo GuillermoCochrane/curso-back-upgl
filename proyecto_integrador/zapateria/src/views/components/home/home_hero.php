@@ -23,7 +23,7 @@
         <div class="ratio ratio-4x3 rounded-5 bg-light shadow overflow-hidden">
           <model-viewer 
             class="w-100 h-100"
-            id="hero-zapatilla-3d" src="./public/img/models/zapatilla.glb"
+            id="hero-zapatilla-3d" src="<?= BASE_PATH ?? "" ?>/public/img/models/zapatilla.glb"
             alt="Zapatilla en 3D; arrastrá para verla desde distintos ángulos" 
             auto-rotate
             auto-rotate-delay="0" 

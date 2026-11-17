@@ -2,13 +2,13 @@
   $nav_items = [
     [
       "label" => "Inicio",
-      "url" => "index.php",
+      "url" => BASE_PATH."/",
       "link_styles" => "nav-link active",
       "isDropdown" => false,
     ],
     [
       "label" => "Productos",
-      "url" => "productos.php",
+      "url" => BASE_PATH."/pages/zapatillas",
       "isDropdown" => false,
     ],
     [
@@ -19,12 +19,12 @@
     ],
     [
       "label" => "Contacto",
-      "url" => "contacto.php",
+      "url" => BASE_PATH."/pages/marcas",
       "isDropdown" => false,
     ],
     [
       "label" => "Carrito",
-      "url" => "carrito.php",
+      "url" => BASE_PATH."/",
       "li_styles" => "nav-item ms-lg-3",
       "link_styles" => "btn btn-light text-dark",
       "icon" => "shopping-cart",
