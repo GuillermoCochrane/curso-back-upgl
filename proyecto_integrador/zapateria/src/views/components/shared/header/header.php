@@ -3,7 +3,7 @@
 
     <!-- Marca -->
     <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="index.php">
-      <img src="./public/img/logo.png" alt="Volver al inicio" height="64" class="rounded-circle">
+      <img src="<?= $base_path ?? "" ?>/public/img/logo.png" alt="Volver al inicio" height="64" class="rounded-circle">
       <p class="fw-bold mb-0">Zapatos <br>El Cordon</p>
     </a>
 
