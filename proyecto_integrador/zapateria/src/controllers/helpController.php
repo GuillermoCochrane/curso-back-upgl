@@ -5,9 +5,9 @@
   $zapatillasDB = __DIR__ . "/../data/zapatillas.json";
   $marcasDB = __DIR__ . "/../data/marcas.json";
 
-  function datosHelpController(string $title, string $marcasDB): array {
+  function datosHelpController(string $title): array {
     return [
-      "marcas" => cargarDatos($marcasDB),
+      "marcas" => cargarDatos(DB_MARCAS),
       "template" => "help",
       "title" => $title
     ];

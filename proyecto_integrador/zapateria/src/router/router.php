@@ -35,7 +35,7 @@
   
   //? 4. Usamos match para llamar a la función correcta con sus argumentos correctos
   $datos = match ($data_function) {
-      'datosMainController' => datosMainController($zapatillasDB ?? "", $marcasDB ?? ""),
-      'datosHelpController' => datosHelpController($uri, $marcasDB ?? ""),
-      default               => datosHelpController($uri, $marcasDB ?? ""),
+      'datosMainController' => datosMainController(),
+      'datosHelpController' => datosHelpController($uri),
+      default               => datosHelpController($uri),
   };
