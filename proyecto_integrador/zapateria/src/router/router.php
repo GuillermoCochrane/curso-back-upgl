@@ -4,7 +4,7 @@
   $uri = str_replace(BASE_PATH, '', $uri); // Quita el prefijo de la subcarpeta
   $uri = rtrim($uri, '/'); // Saca la barra final
   
-  // Si queda vacío, es porque entramos a la raíz del proyecto
+  //! Si queda vacío, es porque entramos a la raíz del proyecto
   if ($uri === '') {
       $uri = '/';
   }
@@ -18,17 +18,22 @@
     "help" => [
       'controller' => '/../controllers/helpController.php',
       'data_function' => 'datosHelpController'
+    ],
+    "zapatillas" => [
+      'controller' => '/../controllers/zapatillasController.php',
+      'data_function' => 'datosZapatillas'
     ]
   ];
 
   $routes = [
     '/' => $actions['home'],
     '/pages' => $actions['home'],
-    '/pages/zapatillas' => $actions['help'],
+    '/pages/zapatillas' => $actions['zapatillas'],
+    '/pages/marcas' => $actions['help'],
   ];
 
   //? 3. Buscamos la ruta o usamos el default
-  $route = $routes[$uri] ?? $routes["/pages/zapatillas"]; // Default a help
+  $route = $routes[$uri] ?? $routes["/pages/marcas"]; // Default a help
   extract($route); 
 
     require_once __DIR__ . $controller;
@@ -37,5 +42,6 @@
   $datos = match ($data_function) {
       'datosMainController' => datosMainController(),
       'datosHelpController' => datosHelpController($uri),
+      'datosZapatillas'     => datosZapatillas(),
       default               => datosHelpController($uri),
   };
