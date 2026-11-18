@@ -9,3 +9,15 @@
       "scripts" => "zapatillas"
     ];
   }
+
+  function datosZapatilla(string $id): array {
+    $zapatillas = cargarDatos(DB_ZAPATILLAS);
+    $zapatilla = array_filter($zapatillas, fn($z) => $z['id'] === $id);
+    $zapatilla = array_shift($zapatilla);
+    return [
+      "zapatilla" => $zapatilla,
+      "marcas" => cargarDatos(DB_MARCAS),
+      "template" => "detalle_zapatilla",
+      "scripts" => "zapatillas"
+    ];
+  }
