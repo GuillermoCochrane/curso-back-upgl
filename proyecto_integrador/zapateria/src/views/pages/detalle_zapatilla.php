@@ -1,0 +1,1 @@
+<?php include_once __DIR__."/../components/zapatillas/zapatilla_detalle.php" ?>
