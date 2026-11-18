@@ -9,6 +9,9 @@
       $uri = '/';
   }
 
+  // NUEVO: Capturamos el ID que viene por la URL (?id=nike-dunk-low)
+  $id = $_GET['id'] ?? '';
+
   //? 2. Definimos las rutas, sus controladores y funciones
   $actions = [
     "home" => [
@@ -22,6 +25,10 @@
     "zapatillas" => [
       'controller' => '/../controllers/zapatillasController.php',
       'data_function' => 'datosZapatillas'
+    ],
+    "zapatilla" => [
+      'controller' => '/../controllers/zapatillasController.php',
+      'data_function' => 'datosZapatilla'
     ]
   ];
 
@@ -30,18 +37,20 @@
     '/pages' => $actions['home'],
     '/pages/zapatillas' => $actions['zapatillas'],
     '/pages/marcas' => $actions['help'],
+    '/pages/zapatillas/detalle' => $actions['zapatilla'], 
   ];
 
   //? 3. Buscamos la ruta o usamos el default
-  $route = $routes[$uri] ?? $routes["/pages/marcas"]; // Default a help
+  $route = $routes[$uri] ?? $routes["/pages/marcas"];
   extract($route); 
 
-    require_once __DIR__ . $controller;
+  require_once __DIR__ . $controller;
   
   //? 4. Usamos match para llamar a la función correcta con sus argumentos correctos
   $datos = match ($data_function) {
       'datosMainController' => datosMainController(),
       'datosHelpController' => datosHelpController($uri),
       'datosZapatillas'     => datosZapatillas(),
+      'datosZapatilla'      => datosZapatilla($id), 
       default               => datosHelpController($uri),
   };
