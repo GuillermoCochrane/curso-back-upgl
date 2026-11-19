@@ -29,6 +29,10 @@
     "zapatilla" => [
       'controller' => '/../controllers/zapatillasController.php',
       'data_function' => 'datosZapatilla'
+    ],
+    "crear" => [
+      'controller' => '/../controllers/zapatillasController.php',
+      'data_function' => 'datosCrearZapatilla'
     ]
   ];
 
@@ -38,6 +42,7 @@
     '/pages/zapatillas' => $actions['zapatillas'],
     '/pages/marcas' => $actions['help'],
     '/pages/zapatillas/detalle' => $actions['zapatilla'], 
+    '/pages/zapatillas/crear' => $actions['crear'],
   ];
 
   //? 3. Buscamos la ruta o usamos el default
@@ -51,6 +56,7 @@
       'datosMainController' => datosMainController(),
       'datosHelpController' => datosHelpController($uri),
       'datosZapatillas'     => datosZapatillas(),
-      'datosZapatilla'      => datosZapatilla($id), 
+      'datosZapatilla'      => datosZapatilla($id),
+      'datosCrearZapatilla' => datosCrearZapatilla(),
       default               => datosHelpController($uri),
   };
