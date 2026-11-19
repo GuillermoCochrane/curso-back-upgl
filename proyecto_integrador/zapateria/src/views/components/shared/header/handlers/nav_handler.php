@@ -18,8 +18,8 @@
       "dropdown_items" => $marcas ?? [],
     ],
     [
-      "label" => "Contacto",
-      "url" => BASE_PATH."/pages/marcas",
+      "label" => "Crear",
+      "url" => BASE_PATH. "/pages/zapatillas/crear",
       "isDropdown" => false,
     ],
     [
