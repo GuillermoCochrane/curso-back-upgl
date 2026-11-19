@@ -21,3 +21,11 @@
       "scripts" => "zapatillas"
     ];
   }
+
+  function datosCrearZapatilla(): array {
+    return [
+      "marcas" => cargarDatos(DB_MARCAS),
+      "template" => "crear_zapatilla",
+      "scripts" => "bootstrap"
+    ];
+  }
