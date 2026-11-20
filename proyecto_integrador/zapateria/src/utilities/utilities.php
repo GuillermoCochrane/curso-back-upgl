@@ -25,3 +25,9 @@
     $uri = rtrim($uri, '/');
     return $uri;
   }
+
+  function obtenerParametro(string $uri, int $indice = 1): string{
+    $partes = explode('/', trim($uri, '/'));
+    return '/' . ($partes[$indice] ?? '');
+  }
+
