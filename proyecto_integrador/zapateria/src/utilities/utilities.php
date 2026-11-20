@@ -11,9 +11,17 @@
     $nuevoId = $ids === [] ? 1 : max($ids) + 1;
     return $nuevoId;
   }
+
   function generarSlug(string $nombre): string {
     //Reemplaza caracteres especiales por guiones
     $slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $nombre);
     //Saca guiones de los extremos y pasa a minúsculas
     return strtolower(trim($slug, '-'));
+  }
+
+  function sanitaizarURI():string{
+    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $uri = str_replace(BASE_PATH, '', $uri);
+    $uri = rtrim($uri, '/');
+    return $uri;
   }
