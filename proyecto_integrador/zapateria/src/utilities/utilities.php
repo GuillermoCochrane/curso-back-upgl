@@ -31,3 +31,6 @@
     return '/' . ($partes[$indice] ?? '');
   }
 
+  function esPost(): bool {
+    return ($_SERVER['REQUEST_METHOD'] ?? '') === 'POST';
+  }
