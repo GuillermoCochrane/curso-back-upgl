@@ -8,8 +8,11 @@
         <?= isset($editar) && $editar ? ": " . (isset($nombre) && $nombre) : "" ?>
       </h2>
 
-      <form method="POST" action="<?= $ruta ?? '' ?>" class="row g-3">
-        <?php include_once __DIR__."/handlers/zapatillas_form_handler.php" ?>
+      <form method="POST" action="<?= $form_path ?? '' ?>" class="row g-3">
+        <?php 
+          include_once __DIR__."/handlers/zapatillas_form_handler.php";
+          render_form_zapatilla($campos);
+        ?>
       </form>
 
     </div>
