@@ -26,6 +26,7 @@
     return [
       "marcas" => cargarDatos(DB_MARCAS),
       "template" => "crear_zapatilla",
-      "scripts" => "bootstrap"
+      "scripts" => "bootstrap",
+      "form_path" => BASE_PATH. "/pages/zapatillas/crear"
     ];
   }
