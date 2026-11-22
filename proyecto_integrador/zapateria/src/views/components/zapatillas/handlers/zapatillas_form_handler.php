@@ -38,7 +38,7 @@
       "value"     => $datos["stock"] ?? ""
     ],
     [
-      "type"        => "text",
+      "type"        => "number",
       "name"        => "talles",
       "label"       => "Talles",
       "col_class"   => "col-md-6",
