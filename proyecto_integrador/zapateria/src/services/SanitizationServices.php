@@ -34,3 +34,16 @@
     $uri = rtrim($uri, '/');
     return $uri;
   }
+
+  function sanitizarZapatilla(array $datos): array {
+    return [
+      "nombre"      => normalizarTexto($datos["nombre"] ?? ""),
+      "marcaID"     => normalizarEntero($datos["marcaID"] ?? ""),
+      "precio"      => normalizarEntero($datos["precio"] ?? ""),
+      "stock"       => normalizarEntero($datos["stock"] ?? ""),
+      "descripcion" => normalizarTexto($datos["descripcion"] ?? ""),
+      "talles"      => normalizarEntero($datos["talles"] ?? ""),
+      "colores"     => normalizarTexto($datos["colores"] ?? ""),
+      "imagen"      => normalizarTexto($datos["imagen"] ?? "")
+    ];
+  }
