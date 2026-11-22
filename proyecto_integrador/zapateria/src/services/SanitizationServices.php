@@ -1,6 +1,10 @@
 <?php
   declare(strict_types=1);
 
+  function escapar(string $texto): string {
+    return htmlspecialchars($texto, ENT_QUOTES, 'UTF-8');
+  }
+
   function normalizarTexto(?string $texto): string {
     return trim((string) ($texto ?? ''));
   };
