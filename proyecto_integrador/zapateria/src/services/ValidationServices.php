@@ -14,3 +14,23 @@
     }
     return '';
   }
+
+  function validarCreacionZapatillas(array $datos): string {
+    // 1. Armamos los campos requeridos (usando el array que nos pasan)
+    $campos_requeridos = [
+      "nombre"    => $datos['nombre'] ?? '',
+      "marcaID"   => $datos['marcaID'] ?? '',
+      "precio"    => $datos['precio'] ?? '',
+      "stock"     => $datos['stock'] ?? ''
+    ];
+
+    // 2. Validamos los obligatorios y guardamos el resultado
+    $mensaje = validarCamposRequeridos($campos_requeridos);
+
+    // 3. Si no hubo error en los obligatorios, validamos la imagen
+    if ($mensaje === '') {
+        $mensaje = validarImagen($datos['imagen'] ?? '');
+    }
+
+    return $mensaje;
+  }
