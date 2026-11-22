@@ -16,7 +16,10 @@
         default    => datosZapatillas()
       };
     } else {
-      $datos = [];
+      $datos = match($subParametro){
+        "/crear" => crearZapatilla(),
+        default => datosZapatillas()
+      };
     };
 
     return $datos;
