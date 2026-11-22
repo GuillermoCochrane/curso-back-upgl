@@ -8,6 +8,10 @@
         <?= isset($editar) && $editar ? ": " . (isset($nombre) && $nombre) : "" ?>
       </h2>
 
+      <?php if($mensaje !== ""): ?>
+        <div class="alert alert-danger"><?= $mensaje ?? "" ?></div>
+      <?php endif; ?>
+
       <form method="POST" action="<?= $form_path ?? '' ?>" class="row g-3">
         <?php 
           include_once __DIR__."/handlers/zapatillas_form_handler.php";
