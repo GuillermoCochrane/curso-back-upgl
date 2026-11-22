@@ -1,12 +1,14 @@
 <?php
   declare(strict_types=1);
 
+  require_once __DIR__ . "/../services/CRUDServices.php";
+
   function datosZapatillas(): array {
     return [
       "zapatillas" => cargarDatos(DB_ZAPATILLAS),
-      "marcas" => cargarDatos(DB_MARCAS),
-      "template" => "zapatillas",
-      "scripts" => "zapatillas"
+      "marcas"     => cargarDatos(DB_MARCAS),
+      "template"   => "zapatillas",
+      "scripts"    => "zapatillas"
     ];
   }
 
@@ -16,17 +18,28 @@
     $zapatilla = array_shift($zapatilla);
     return [
       "zapatilla" => $zapatilla,
-      "marcas" => cargarDatos(DB_MARCAS),
-      "template" => "detalle_zapatilla",
-      "scripts" => "zapatillas"
+      "marcas"    => cargarDatos(DB_MARCAS),
+      "template"  => "detalle_zapatilla",
+      "scripts"   => "zapatillas"
     ];
   }
 
   function datosCrearZapatilla(): array {
     return [
-      "marcas" => cargarDatos(DB_MARCAS),
-      "template" => "crear_zapatilla",
-      "scripts" => "bootstrap",
-      "form_path" => BASE_PATH. "/pages/zapatillas/crear"
+      "marcas"    => cargarDatos(DB_MARCAS),
+      "template"  => "crear_zapatilla",
+      "scripts"   => "bootstrap",
+      "form_path" => BASE_PATH. "/pages/zapatillas/crear/"
     ];
+  }
+
+  function crearZapatilla(): void {
+    $respuesta = agregarEntrada(DB_ZAPATILLAS, cargarDatos(DB_ZAPATILLAS), $_POST, 'zapatillas');
+    
+    $datos = $respuesta["datos"];
+    $nuevaZapatilla = end($datos);
+    $nuevoId = $nuevaZapatilla['id'];
+    
+    header('Location: ' . BASE_PATH . '/pages/zapatillas/detalle?id=' . $nuevoId);
+    exit;
   }
