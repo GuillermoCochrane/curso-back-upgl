@@ -5,3 +5,12 @@
     }
     return ''; 
   }
+
+  function validarCamposRequeridos(array $campos): string {
+    foreach ($campos as $campo => $valor) {
+      if (trim($valor) === '') {
+        return "Debe completar el campo $campo.";
+      }
+    }
+    return '';
+  }
