@@ -34,12 +34,7 @@
   }
 
   function crearZapatilla(): void {
-    $respuesta = agregarEntrada(DB_ZAPATILLAS, cargarDatos(DB_ZAPATILLAS), $_POST, 'zapatillas');
-    
-    $datos = $respuesta["datos"];
-    $nuevaZapatilla = end($datos);
-    $nuevoId = $nuevaZapatilla['id'];
-    
+    $nuevoId = agregarEntrada( $_POST, 'zapatillas');
     header('Location: ' . BASE_PATH . '/pages/zapatillas/detalle?id=' . $nuevoId);
     exit;
   }

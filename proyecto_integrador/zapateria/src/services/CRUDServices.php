@@ -6,13 +6,14 @@
   require_once __DIR__ . "/ModelService.php";
 
   // Funciones de Carga de datos nuevos
-  function agregarEntrada(string $archivo, array $datos, array $entrada, string $entidad): array {
-    
+  function agregarEntrada( array $entrada, string $entidad): int {
+
+    $datos = cargarDatos(DB_ZAPATILLAS);
     // 1. Procesamos los datos del formulario (Mapeo)
     $nuevosDatos = modelHandler($entrada, $entidad);
 
     // 2. Generamos los datos del sistema (ID y Slug)
-    $nuevoId = generarID($datos);
+    $nuevoId = generarID(cargarDatos(DB_ZAPATILLAS));
     $nuevoSlug = generarSlug($nuevosDatos["nombre"]); // Usamos el nombre ya procesado
 
     // 3. Inyectamos los datos del sistema
@@ -21,8 +22,8 @@
   
     // 4. Agregamos y guardamos
     $datos[] = $nuevosDatos;
-    guardarDatos($archivo, $datos); 
+    guardarDatos(DB_ZAPATILLAS, $datos); 
 
     // 5. Devolvemos el mensaje dinámico
-    return ["datos" => $datos, "mensaje" => "$entidad agregada."]; 
+    return $nuevoId; 
   }
