@@ -35,8 +35,12 @@
     ];
   }
 
-  function crearZapatilla(): void {
-    $nuevoId = agregarEntrada( $_POST, 'zapatillas', DB_ZAPATILLAS);
+  function crearZapatilla(): array {
+    $mensaje = validarCreacionZapatillas($_POST);
+    if ($mensaje !== ""){
+      return datosCrearZapatilla($mensaje, $_POST);
+    } 
+    $nuevoId = agregarEntrada($_POST, 'zapatillas', DB_ZAPATILLAS);
     header('Location: ' . BASE_PATH . '/pages/zapatillas/detalle?id=' . $nuevoId);
     exit;
   }
