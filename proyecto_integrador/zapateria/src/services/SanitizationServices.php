@@ -16,3 +16,12 @@
     $numero = filter_var($valorLimpio, FILTER_VALIDATE_FLOAT);
     return $numero !== false ? $numero : 0.0;
   }
+
+
+  function normalizarArray(?string $valor): array {
+    $elementos = explode(',', $valor);
+    $elementosLimpios = array_map('trim', $elementos);
+    return array_values(array_filter($elementosLimpios, function($item) {
+        return $item !== '';
+    }));
+  }
