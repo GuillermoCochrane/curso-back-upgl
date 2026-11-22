@@ -34,7 +34,7 @@
   }
 
   function crearZapatilla(): void {
-    $nuevoId = agregarEntrada( $_POST, 'zapatillas');
+    $nuevoId = agregarEntrada( $_POST, 'zapatillas', DB_ZAPATILLAS);
     header('Location: ' . BASE_PATH . '/pages/zapatillas/detalle?id=' . $nuevoId);
     exit;
   }
