@@ -27,3 +27,10 @@
         return $item !== '';
     }));
   }
+
+  function sanitaizarURI():string{
+    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+    $uri = str_replace(BASE_PATH, '', $uri);
+    $uri = rtrim($uri, '/');
+    return $uri;
+  }

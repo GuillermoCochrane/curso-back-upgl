@@ -19,13 +19,6 @@
     return strtolower(trim($slug, '-'));
   }
 
-  function sanitaizarURI():string{
-    $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-    $uri = str_replace(BASE_PATH, '', $uri);
-    $uri = rtrim($uri, '/');
-    return $uri;
-  }
-
   function obtenerParametro(string $uri, int $indice = 1): string{
     $partes = explode('/', trim($uri, '/'));
     return '/' . ($partes[$indice] ?? '');
