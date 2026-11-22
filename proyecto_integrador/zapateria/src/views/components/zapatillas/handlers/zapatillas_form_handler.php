@@ -1,70 +1,77 @@
 <?php
-  // Definimos la configuración de todos los campos del formulario
   $campos = [
     [
-      "type" => "text",
-      "name" => "nombre",
-      "label" => "Modelo / Nombre *",
+      "type"      => "text",
+      "name"      => "nombre",
+      "label"     => "Modelo / Nombre *",
       "col_class" => "col-md-6",
-      "required" => true
+      "value"     => $datos["nombre"] ?? "",
+      "required"  => false
     ],
     [
-      "type" => "select",
-      "name" => "marcaID",
-      "label" => "Marca *",
-      "col_class" => "col-md-6",
-      "required" => true,
-      "options" => $marcas ?? [],
-      "default_option" => "una marca",
-      "handler" => "/../../../components/zapatillas/handlers/zapatillas_select_handler.php"
+      "type"            => "select",
+      "name"            => "marcaID",
+      "label"           => "Marca *",
+      "col_class"       => "col-md-6",
+      "required"        => false,
+      "options"         => $marcas ?? [],
+      "default_option"  => "una marca",
+      "value"           => $datos["marcaID"] ?? "",
+      "handler"         => "/../../../components/zapatillas/handlers/zapatillas_select_handler.php"
     ],
     [
-      "type" => "number",
-      "name" => "precio",
-      "label" => "Precio ($) *",
+      "type"      => "number",
+      "name"      => "precio",
+      "label"     => "Precio ($) *",
       "col_class" => "col-md-6",
-      "required" => true,
-      "min" => 0
+      "required"  => false,
+      "min"       => 0,
+      "value"     => $datos["precio"] ?? ""
     ],
     [
-      "type" => "number",
-      "name" => "stock",
-      "label" => "Stock *",
+      "type"      => "number",
+      "name"      => "stock",
+      "label"     => "Stock *",
       "col_class" => "col-md-6",
-      "required" => true,
-      "min" => 0
+      "required"  => false,
+      "min"       => 0,
+      "value"     => $datos["stock"] ?? ""
     ],
     [
-      "type" => "text",
-      "name" => "talles",
-      "label" => "Talles",
-      "col_class" => "col-md-6",
-      "placeholder" => "Ej: 36, 37, 38"
+      "type"        => "text",
+      "name"        => "talles",
+      "label"       => "Talles",
+      "col_class"   => "col-md-6",
+      "placeholder" => "Ej: 36, 37, 38",
+      "value"       => $datos["talles"] ?? ""
     ],
     [
-      "type" => "text",
-      "name" => "colores",
-      "label" => "Colores",
-      "col_class" => "col-md-6",
-      "placeholder" => "Ej: Blanco, Negro"
+      "type"        => "text",
+      "name"        => "colores",
+      "label"       => "Colores",
+      "col_class"   => "col-md-6",
+      "placeholder" => "Ej: Blanco, Negro",
+      "value"       => $datos["colores"] ?? ""
     ],
     [
-      "type" => "url",
-      "name" => "imagen",
-      "label" => "URL de la Imagen",
+      "type"        => "url",
+      "name"        => "imagen",
+      "label"       => "URL de la Imagen",
+      "col_class"   => "col-12",
+      "placeholder" => "https://...",
+      "value"       => $datos["imagen"] ?? ""
+    ],
+    [
+      "type"      => "textarea",
+      "name"      => "descripcion",
+      "label"     => "Descripción",
       "col_class" => "col-12",
-      "placeholder" => "https://..."
+      "rows"      => 3,
+      "value"     => $datos["descripcion"] ?? ""
     ],
     [
-      "type" => "textarea",
-      "name" => "descripcion",
-      "label" => "Descripción",
-      "col_class" => "col-12",
-      "rows" => 3
-    ],
-    [
-      "type" => "buttons",
-      "entidad" => "Zapatilla",
+      "type"      => "buttons",
+      "entidad"   => "Zapatilla",
       "col_class" => "col-12 mt-4"
     ]
   ];
@@ -79,7 +86,7 @@
         'select'                  => __DIR__ . "/../../shared/select/select",
         'textarea'                => __DIR__ . $relative_path . "textarea",
         'buttons'                 => __DIR__ . $relative_path . "buttons",
-        default                  => null
+        default                   => null
       };
 
       // Si la ruta existe, renderizamos
