@@ -8,9 +8,12 @@
         <?= isset($editar) && $editar ? ": " . (isset($nombre) && $nombre) : "" ?>
       </h2>
 
-      <?php if($mensaje !== ""): ?>
-        <div class="alert alert-danger"><?= $mensaje ?? "" ?></div>
-      <?php endif; ?>
+      <?php 
+        if (!empty($alerta["message"])): 
+          $template_path = __DIR__ . "/../../partials/alert/alert";
+          render($template_path, $alerta);
+        endif;
+      ?>
 
       <form method="POST" action="<?= $form_path ?? '' ?>" class="row g-3">
         <?php 

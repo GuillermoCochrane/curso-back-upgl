@@ -26,14 +26,17 @@
     ];
   }
 
-  function datosCrearZapatilla(string $mensaje = "", array $datos=[]): array {
+  function datosCrearZapatilla(string $mensaje = "", array $datos = [], string $alerta = "danger"): array {
     return [
-      "marcas"    => cargarDatos(DB_MARCAS),
-      "template"  => "crear_zapatilla",
-      "scripts"   => "bootstrap",
-      "form_path" => BASE_PATH. "/pages/zapatillas/crear/",
-      "mensaje"   => $mensaje,
-      "datos"     => $datos
+      "marcas"    =>  cargarDatos(DB_MARCAS),
+      "template"  =>  "crear_zapatilla",
+      "scripts"   =>  "bootstrap",
+      "form_path" =>  BASE_PATH. "/pages/zapatillas/crear/",
+      "alerta"    =>  [
+                        'type'    => $alerta,
+                        'message' => $mensaje,
+                      ],
+      "datos"     =>  $datos,
     ];
   }
 
