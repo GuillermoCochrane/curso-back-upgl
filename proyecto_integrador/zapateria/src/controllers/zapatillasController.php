@@ -2,6 +2,8 @@
   declare(strict_types=1);
 
   require_once __DIR__ . "/../services/CRUDServices.php";
+  require_once __DIR__ . "/../services/SanitizationServices.php";
+  require_once __DIR__ . "/../services/ValidationServices.php";
 
   function datosZapatillas(): array {
     return [
@@ -39,8 +41,9 @@
     $mensaje = validarCreacionZapatillas($_POST);
     if ($mensaje !== ""){
       return datosCrearZapatilla($mensaje, $_POST);
-    } 
-    $nuevoId = agregarEntrada($_POST, 'zapatillas', DB_ZAPATILLAS);
+    }
+    $datos = sanitizarZapatilla($_POST);
+    $nuevoId = agregarEntrada($datos, 'zapatillas', DB_ZAPATILLAS);
     header('Location: ' . BASE_PATH . '/pages/zapatillas/detalle?id=' . $nuevoId);
     exit;
   }
