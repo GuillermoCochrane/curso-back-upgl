@@ -10,15 +10,16 @@
 
     if ($metodo !== true){
       $datos = match($subParametro){
-        '/'        => datosZapatillas(),
-        '/crear'   => datosCrearZapatilla(),
-        '/detalle' => datosZapatilla($_GET['id'] ?? ''),
-        default    => datosZapatillas()
+        "/"         => datosZapatillas(),
+        "/crear"    => datosCrearZapatilla(),
+        "/detalle"  => datosZapatilla($_GET["id"] ?? ""),
+        "/editar"   => datosEditarZapatilla($_GET["id"] ?? ""),
+        default     => datosZapatillas()
       };
     } else {
       $datos = match($subParametro){
-        "/crear" => crearZapatilla(),
-        default => datosZapatillas()
+        "/crear"  => crearZapatilla(),
+        default   => datosZapatillas()
       };
     };
 
