@@ -40,3 +40,31 @@
 
     return [];
   }
+
+  function actualizarEntrada(int $id, array $datosNuevos, string $archivo): void {
+    $datos = cargarDatos($archivo);
+    $encontrado = false; 
+
+    foreach ($datos as &$dato) {
+      if ((int)$dato['id'] === $id) {
+        $dato['marca_id']    = $datosNuevos['marca_id'];
+        $dato['nombre']      = $datosNuevos['nombre'];
+        $dato['precio']      = $datosNuevos['precio'];
+        $dato['stock']       = $datosNuevos['stock'];
+        $dato['descripcion'] = $datosNuevos['descripcion'];
+        $dato['talles']      = $datosNuevos['talles'];
+        $dato['colores']     = $datosNuevos['colores'];
+        $dato['imagen']      = $datosNuevos['imagen'];
+        $dato["slug"]        = generarSlug($datosNuevos["nombre"]);
+
+        $encontrado = true;
+        break;
+      }
+    }
+    unset($dato);
+    
+    // Solo guardamos si realmente se modificó algo
+    if ($encontrado) {
+        guardarDatos($archivo, $datos);
+    }
+  }
