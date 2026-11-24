@@ -35,12 +35,12 @@
     <dl class="mb-0 border-top pt-3">
       <dt class="small text-uppercase text-primary mb-2">Talles disponibles</dt>
       <dd id="modal-talles" class="mb-3">
-        <?= isset($talles) ? implode(', ', $talles) : '' ?>
+        <?=  $talles ?? '' ?>
       </dd>
 
       <dt class="small text-uppercase text-primary mb-2">Colores</dt>
       <dd id="modal-colores" class="mb-0">
-        <?= isset($colores) ? implode(', ', $colores) : '' ?>
+        <?= $colores ?? '' ?>
       </dd>
     </dl>
   </section>
