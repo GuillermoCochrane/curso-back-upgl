@@ -18,8 +18,8 @@
         "precio"      => $entrada["precio"],
         "stock"       => $entrada["stock"],
         "descripcion" => $entrada["descripcion"],
-        "talles"      => [$entrada["talles"]],
-        "colores"     => [$entrada["colores"]],
+        "talles"      => $entrada["talles"],
+        "colores"     => $entrada["colores"],
         "imagen"      => $entrada["imagen"],
       ];
   }
