@@ -54,3 +54,11 @@
     header('Location: ' . BASE_PATH . '/pages/zapatillas/detalle?id=' . $nuevoId);
     exit;
   }
+
+  function datosEditarZapatilla(string $id): array {
+    $zapatillas = cargarDatos(DB_ZAPATILLAS);
+    $zapatilla = buscarPorId($zapatillas, (int)$id);
+    $mensaje  = empty($zapatilla) ? "Zapatilla no encontrada" : "";
+    $alerta   = "warning";
+    return datosCrearZapatilla($mensaje, $zapatilla,$alerta);
+  }
