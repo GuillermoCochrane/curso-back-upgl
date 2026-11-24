@@ -26,3 +26,17 @@
     // 5. Devolvemos el ID
     return $nuevoId; 
   }
+
+  function buscarPorId(array $datos, int $id): array {
+    if ($id <= 0) {
+      return [];
+    }
+
+    foreach ($datos as $dato) {
+      if ((int) $dato['id'] === $id) {
+        return $dato;
+      }
+    }
+
+    return [];
+  }
