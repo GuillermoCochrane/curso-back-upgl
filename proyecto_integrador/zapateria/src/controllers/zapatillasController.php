@@ -67,7 +67,7 @@
 
     $alerta = !empty($mensaje) ? "danger" : "warning";
     $datos_vista = datosCrearZapatilla($mensaje, $zapatilla, $alerta);
-    $datos_vista['form_path'] = BASE_PATH . "/pages/zapatillas/editar/";
+    $datos_vista['form_path'] = BASE_PATH . "/pages/zapatillas/editar/?id=" . $id;
     return $datos_vista;
   }
 
