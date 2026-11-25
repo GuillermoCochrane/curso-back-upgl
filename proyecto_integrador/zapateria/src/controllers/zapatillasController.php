@@ -62,3 +62,10 @@
     $alerta   = "warning";
     return datosCrearZapatilla($mensaje, $zapatilla,$alerta);
   }
+
+  function actualizarZapatilla(string $id): void {
+    $datosMapeados = modelHandler($_POST, 'zapatillas');
+    actualizarEntrada((int)$id, $datosMapeados, DB_ZAPATILLAS);
+    header('Location: ' . BASE_PATH . '/pages/zapatillas/detalle?id=' . $id);
+    exit;
+  }
