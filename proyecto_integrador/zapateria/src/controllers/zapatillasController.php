@@ -55,12 +55,20 @@
     exit;
   }
 
-  function datosEditarZapatilla(string $id): array {
-    $zapatillas = cargarDatos(DB_ZAPATILLAS);
-    $zapatilla = buscarPorId($zapatillas, (int)$id);
-    $mensaje  = empty($zapatilla) ? "Zapatilla no encontrada" : "";
-    $alerta   = "warning";
-    return datosCrearZapatilla($mensaje, $zapatilla,$alerta);
+  function datosEditarZapatilla(string $id, string $mensaje = "", array $datos = []): array {
+    if (empty($datos)) {
+      $zapatillas = cargarDatos(DB_ZAPATILLAS);
+      $zapatilla = buscarPorId($zapatillas, (int)$id);
+      $mensaje = empty($zapatilla) ? "Zapatilla no encontrada" : "";
+    } else {
+        $zapatilla = $datos; 
+        $zapatilla['id'] = $id; 
+    }
+
+    $alerta = !empty($mensaje) ? "danger" : "warning";
+    $datos_vista = datosCrearZapatilla($mensaje, $zapatilla, $alerta);
+    $datos_vista['form_path'] = BASE_PATH . "/pages/zapatillas/editar/";
+    return $datos_vista;
   }
 
   function actualizarZapatilla(string $id): void {
