@@ -8,7 +8,7 @@
 
   function render_detalle_zapatilla(array $zapatilla, array $alerta): void {
     if (!empty($alerta['message'])) {
-      $template_path = __DIR__ . "/../../partials/alert/alert";
+      $template_path = __DIR__ . "/../../../partials/alert/alert";
       render($template_path, $alerta);
       return; 
     }
