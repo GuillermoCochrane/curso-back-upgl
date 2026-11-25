@@ -19,6 +19,7 @@
     } else {
       $datos = match($subParametro){
         "/crear"  => crearZapatilla(),
+        "/editar" => datosEditarZapatilla($_POST["id"] ?? "0"),
         default   => datosZapatillas()
       };
     };
