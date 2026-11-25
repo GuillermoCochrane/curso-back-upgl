@@ -76,8 +76,8 @@
     if ($mensaje !== "") {
       return datosEditarZapatilla($id, $mensaje, $_POST); 
     }
-
-    actualizarEntrada((int)$id, $_POST, DB_ZAPATILLAS);
+    $datosLimpios = sanitizarZapatilla($_POST);
+    actualizarEntrada((int)$id, $datosLimpios, DB_ZAPATILLAS);
     header('Location: ' . BASE_PATH . '/pages/zapatillas/detalle?id=' . $id);
     exit;
   }
