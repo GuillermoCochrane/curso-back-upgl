@@ -19,7 +19,7 @@
     // 1. Armamos los campos requeridos (usando el array que nos pasan)
     $campos_requeridos = [
       "nombre"    => $datos['nombre'] ?? '',
-      "marcaID"   => $datos['marcaID'] ?? '',
+      "marca_id"   => $datos['marca_id'] ?? '',
       "precio"    => $datos['precio'] ?? '',
       "stock"     => $datos['stock'] ?? ''
     ];

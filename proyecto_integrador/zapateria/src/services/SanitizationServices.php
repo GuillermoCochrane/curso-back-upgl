@@ -38,7 +38,7 @@
   function sanitizarZapatilla(array $datos): array {
     return [
       "nombre"      => normalizarTexto($datos["nombre"] ?? ""),
-      "marcaID"     => normalizarEntero($datos["marcaID"] ?? ""),
+      "marca_id"     => normalizarEntero($datos["marca_id"] ?? ""),
       "precio"      => normalizarEntero($datos["precio"] ?? ""),
       "stock"       => normalizarEntero($datos["stock"] ?? ""),
       "descripcion" => normalizarTexto($datos["descripcion"] ?? ""),

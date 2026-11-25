@@ -10,13 +10,13 @@
     ],
     [
       "type"            => "select",
-      "name"            => "marcaID",
+      "name"            => "marca_id",
       "label"           => "Marca *",
       "col_class"       => "col-md-6",
       "required"        => false,
       "options"         => $marcas ?? [],
       "default_option"  => "una marca",
-      "value"           => $datos["marcaID"] ?? "",
+      "value"           => $datos["marca_id"] ?? "",
       "handler"         => "/../../../components/zapatillas/handlers/zapatillas_select_handler.php"
     ],
     [

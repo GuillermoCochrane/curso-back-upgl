@@ -13,7 +13,7 @@
       return [
         "id"          => 0,
         "slug"        => "",
-        "marca_id"    => $entrada["marcaID"],
+        "marca_id"    => $entrada["marca_id"],
         "nombre"      => $entrada["nombre"],
         "precio"      => $entrada["precio"],
         "stock"       => $entrada["stock"],
