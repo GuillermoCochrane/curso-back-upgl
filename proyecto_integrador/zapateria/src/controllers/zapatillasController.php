@@ -71,9 +71,13 @@
     }
 
     $alerta = !empty($mensaje) ? "danger" : "warning";
-    $datos_vista = datosCrearZapatilla($mensaje, $zapatilla, $alerta);
-    $datos_vista['form_path'] = BASE_PATH . "/pages/zapatillas/editar/?id=" . $id;
-    $datos_vista['editar'] = true;
+    $datos_vista                  = datosCrearZapatilla($mensaje, $zapatilla, $alerta);
+    $datos_vista['form_path']     = BASE_PATH . "/pages/zapatillas/editar/?id=" . $id;
+    $datos_vista['submit_text']   = "Editar Zapatilla";
+    $datos_vista['cancel_url']    = BASE_PATH . "/pages/zapatillas/detalle?id=" . $id; 
+    $datos_vista['titulo']        = "Editar Zapatilla: " . ($zapatilla['nombre'] ?? '');
+    $datos_vista["handler_path"]  = "/../../zapatillas/handlers/zapatillas_form_handler.php";
+    $datos_vista["submit_class"]  = "btn-warning";
     return $datos_vista;
   }
 
