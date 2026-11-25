@@ -71,9 +71,13 @@
     return $datos_vista;
   }
 
-  function actualizarZapatilla(string $id): void {
-    $datosMapeados = modelHandler($_POST, 'zapatillas');
-    actualizarEntrada((int)$id, $datosMapeados, DB_ZAPATILLAS);
+  function actualizarZapatilla(string $id): array {
+    $mensaje = validarCreacionZapatillas($_POST);
+    if ($mensaje !== "") {
+      return datosEditarZapatilla($id, $mensaje, $_POST); 
+    }
+
+    actualizarEntrada((int)$id, $_POST, DB_ZAPATILLAS);
     header('Location: ' . BASE_PATH . '/pages/zapatillas/detalle?id=' . $id);
     exit;
   }
