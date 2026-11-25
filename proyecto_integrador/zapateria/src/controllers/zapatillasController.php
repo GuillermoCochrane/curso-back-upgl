@@ -32,15 +32,20 @@
 
   function datosCrearZapatilla(string $mensaje = "", array $datos = [], string $alerta = "danger"): array {
     return [
-      "marcas"    =>  cargarDatos(DB_MARCAS),
-      "template"  =>  "crear_zapatilla",
-      "scripts"   =>  "bootstrap",
-      "form_path" =>  BASE_PATH. "/pages/zapatillas/crear/",
-      "alerta"    =>  [
-                        'type'    => $alerta,
-                        'message' => $mensaje,
-                      ],
-      "datos"     =>  $datos,
+      "marcas"        =>  cargarDatos(DB_MARCAS),
+      "template"      =>  "crear_zapatilla",
+      "scripts"       =>  "bootstrap",
+      "form_path"     =>  BASE_PATH. "/pages/zapatillas/crear/",
+      "alerta"        =>  [
+                            'type'    => $alerta,
+                            'message' => $mensaje,
+                          ],
+      "datos"         =>  $datos,
+      "titulo"        =>  "Agregar Zapatilla",
+      "handler_path"  => "/../../zapatillas/handlers/zapatillas_form_handler.php",
+      "submit_text"   => "Guardar Zapatilla",
+      "cancel_url"    => BASE_PATH . "/pages/zapatillas",
+      "submit_class"  => "btn-primary"
     ];
   }
 
