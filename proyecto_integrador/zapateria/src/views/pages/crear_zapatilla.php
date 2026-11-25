@@ -1,1 +1,1 @@
-<?php include_once __DIR__."/../components/zapatillas/zapatilla_form.php" ?>
+<?php include_once __DIR__."/../components/shared/form/form.php" ?>

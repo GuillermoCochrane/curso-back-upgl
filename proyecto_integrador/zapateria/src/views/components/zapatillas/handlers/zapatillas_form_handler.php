@@ -70,17 +70,17 @@
       "value"     => $datos["descripcion"] ?? ""
     ],
     [
-      "type"      => "buttons",
-      "entidad"   => "Zapatilla",
-      "col_class" => "col-12 mt-4"
+      "type"          => "buttons",
+      "submit_class"  => $submit_class ?? "", 
+      "submit_text"   => $submit_text ?? "", 
+      "cancel_url"    => $cancel_url ?? "",
     ]
   ];
   
-  function render_form_zapatilla(array $campos = []): void {
+  function render_form(array $campos = []): void {
     $relative_path = "/../../../partials/form/";
     foreach ($campos as $campo) {
       
-      // Decidimos la ruta del template según el tipo de campo
       $template_path = match ($campo['type']) {
         'text', 'number', 'url'   => __DIR__ . $relative_path . "input",
         'select'                  => __DIR__ . "/../../shared/select/select",
@@ -89,7 +89,6 @@
         default                   => null
       };
 
-      // Si la ruta existe, renderizamos
       if ($template_path) {
         render($template_path, $campo);
       }
