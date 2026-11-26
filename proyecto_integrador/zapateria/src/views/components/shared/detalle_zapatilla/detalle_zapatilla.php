@@ -1,11 +1,16 @@
 <div class="row g-4 align-items-center">
   <section class="col-md-6">
     <figure class="ratio ratio-1x1 bg-white rounded-4 border overflow-hidden">
+      <?php 
+        $fallback_path = BASE_PATH . "/public/img/fallback.png";
+        $img_src = !empty($imagen) ? $imagen : $fallback_path; 
+      ?>
       <img
         id="modal-imagen"
         class="w-100 h-100 object-fit-contain p-3"
-        src="<?= $imagen ?? '' ?>"
+        src="<?= $img_src ?>"
         alt="<?= $nombre ?? '' ?>"
+        onerror="this.onerror=null; this.src='<?= $fallback_path ?>';"
       >
       <div
         id="modal-imagen-error"

@@ -21,9 +21,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorImagen = document.getElementById("modal-imagen-error");
     imagen.classList.remove("d-none");
     errorImagen.classList.replace("d-flex", "d-none");
+    imagen.src = data.imagen ? data.imagen : `${BASE_PATH}/public/img/fallback.png`;
     imagen.onerror = () => {
-      imagen.classList.add("d-none");
-      errorImagen.classList.replace("d-none", "d-flex");
+      imagen.onerror = null; 
+      imagen.src = `${BASE_PATH}/public/img/fallback.png`;
     };
     imagen.alt = "Zapatilla " + data.nombre;
     imagen.src = data.imagen;
