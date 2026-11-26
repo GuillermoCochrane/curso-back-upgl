@@ -8,7 +8,7 @@
 
       <?php 
         if (!empty($alerta["message"])): 
-          $template_path = __DIR__ . "/../../partials/alert/alert";
+          $template_path = __DIR__ . "/../../../partials/alert/alert";
           render($template_path, $alerta);
         endif;
       ?>
