@@ -19,9 +19,10 @@
       };
     } else {
       $datos = match($subParametro){
-        "/crear"  => crearZapatilla(),
-        "/editar" => actualizarZapatilla($_GET["id"] ?? "0"),
-        default   => datosZapatillas()
+        "/crear"    => crearZapatilla(),
+        "/editar"   => actualizarZapatilla($_GET["id"] ?? "0"),
+        "/eliminar" => eliminarZapatilla($_GET["id"] ?? "0"),
+        default     => datosZapatillas()
       };
     };
 
