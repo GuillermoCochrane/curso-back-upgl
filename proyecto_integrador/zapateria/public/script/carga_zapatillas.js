@@ -35,5 +35,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("modal-descripcion").textContent = data.descripcion;
     document.getElementById("modal-talles").textContent = data.talles;
     document.getElementById("modal-colores").textContent = data.colores;
+    document.getElementById("modal-btn-detalles").href = `/proyecto_integrador/zapateria/pages/zapatillas/detalle?id=${id}`
   });
 });

@@ -21,7 +21,12 @@
         <?php include __DIR__ . "/../detalle_zapatilla/detalle_zapatilla.php"; ?>
       </div>
       <div class="modal-footer bg-body-tertiary px-4">
-        <button type="button" class="btn btn-primary rounded-pill px-4" data-bs-dismiss="modal">Seguir explorando</button>
+        <a href="#" id="modal-btn-detalles" class=" me-auto btn btn-primary rounded-pill px-4">
+          Ver más detalles
+        </a>
+        <button type="button" class="btn btn-warning rounded-pill px-4" data-bs-dismiss="modal">
+          Seguir explorando
+        </button>
       </div>
     </div>
   </div>
