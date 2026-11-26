@@ -112,8 +112,23 @@
     ];
   }
   
-  function eliminarZapatilla(string $id): void {
+  function eliminarZapatilla(string $id): array {
     $mensaje = eliminarEntrada(DB_ZAPATILLAS, (int)$id);
-    header('Location: ' . BASE_PATH . '/pages/zapatillas');
-    exit;
+    $type = "warning";
+
+    if ($mensaje === ""){
+      $mensaje = "Zapatilla eliminada con exito";
+      $type = "success";
+    }
+
+    return [
+      "zapatilla" =>  [],
+      "marcas"    =>  cargarDatos(DB_MARCAS),
+      "template"  =>  "detalle_zapatilla",
+      "scripts"   =>  "bootstrap",
+      "alerta"    =>  [
+                        'type'    => $type,
+                        'message' => $mensaje,
+                      ],
+    ];
   }
