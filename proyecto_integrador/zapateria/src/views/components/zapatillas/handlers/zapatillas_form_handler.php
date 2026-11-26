@@ -6,14 +6,14 @@
       "label"     => "Modelo / Nombre *",
       "col_class" => "col-md-6",
       "value"     => $datos["nombre"] ?? "",
-      "required"  => false
+      "required"  => true
     ],
     [
       "type"            => "select",
       "name"            => "marca_id",
       "label"           => "Marca *",
       "col_class"       => "col-md-6",
-      "required"        => false,
+      "required"        => true,
       "options"         => $marcas ?? [],
       "default_option"  => "una marca",
       "value"           => $datos["marca_id"] ?? "",
@@ -24,7 +24,7 @@
       "name"      => "precio",
       "label"     => "Precio ($) *",
       "col_class" => "col-md-6",
-      "required"  => false,
+      "required"  => true,
       "min"       => 0,
       "value"     => $datos["precio"] ?? ""
     ],
@@ -33,7 +33,7 @@
       "name"      => "stock",
       "label"     => "Stock *",
       "col_class" => "col-md-6",
-      "required"  => false,
+      "required"  => true,
       "min"       => 0,
       "value"     => $datos["stock"] ?? ""
     ],
@@ -42,7 +42,7 @@
       "name"        => "talles",
       "label"       => "Talles",
       "col_class"   => "col-md-6",
-      "placeholder" => "Ej: 36, 37, 38",
+      "placeholder" => "Ej: 43",
       "value"       => $datos["talles"] ?? ""
     ],
     [
@@ -50,7 +50,7 @@
       "name"        => "colores",
       "label"       => "Colores",
       "col_class"   => "col-md-6",
-      "placeholder" => "Ej: Blanco, Negro",
+      "placeholder" => "Ej: Negro",
       "value"       => $datos["colores"] ?? ""
     ],
     [
