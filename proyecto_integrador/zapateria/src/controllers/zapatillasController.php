@@ -132,3 +132,20 @@
                       ],
     ];
   }
+
+  // Endpoint API (JSON) para manejo del modal
+  function endpointZapatilla(string $id): void {
+    $zapatillas = cargarDatos(DB_ZAPATILLAS);
+    $zapatilla = buscarPorId($zapatillas, (int)$id);
+
+    header('Content-Type: application/json; charset=utf-8');
+
+    if (empty($zapatilla)) {
+        http_response_code(404);
+        echo json_encode(["error" => "Zapatilla no encontrada"]);
+        exit;
+    }
+
+    echo json_encode($zapatilla);
+    exit; 
+  }

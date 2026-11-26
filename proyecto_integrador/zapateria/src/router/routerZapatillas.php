@@ -10,12 +10,13 @@
 
     if ($metodo !== true){
       $datos = match($subParametro){
-        "/"           => datosZapatillas(),
-        "/crear"      => datosCrearZapatilla(),
-        "/detalle"    => datosZapatilla($_GET["id"] ?? ""),
-        "/editar"     => datosEditarZapatilla($_GET["id"] ?? ""),
-        "/eliminar"   => datosEliminarZapatilla($_GET["id"] ?? ""),
-        default       => datosZapatillas()
+        "/"                   => datosZapatillas(),
+        "/crear"              => datosCrearZapatilla(),
+        "/detalle"            => datosZapatilla($_GET["id"] ?? ""),
+        "/editar"             => datosEditarZapatilla($_GET["id"] ?? ""),
+        "/eliminar"           => datosEliminarZapatilla($_GET["id"] ?? ""),
+        "/endpointZapatilla"  => endpointZapatilla($_GET["id"] ?? "0"),
+        default               => datosZapatillas()
       };
     } else {
       $datos = match($subParametro){
