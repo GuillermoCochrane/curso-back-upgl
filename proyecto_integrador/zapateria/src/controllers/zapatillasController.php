@@ -91,3 +91,22 @@
     header('Location: ' . BASE_PATH . '/pages/zapatillas/detalle?id=' . $id);
     exit;
   }
+
+  function datosEliminarZapatilla(string $id): array {
+    $zapatillas = cargarDatos(DB_ZAPATILLAS);
+    $zapatilla = buscarPorId($zapatillas, (int)$id);
+    return [
+      "template"      =>  "crear_zapatilla",
+      "scripts"       =>  "bootstrap",
+      "form_path"     =>  BASE_PATH . "/pages/zapatillas/eliminar/?id=" . $id,
+      "alerta"        =>  [
+                            'type'    => "warning",
+                            'message' => empty($zapatilla) ? "Zapatilla no encontrada" : "",
+                          ],      
+      "titulo"        =>  "¿Esta seguro que desea eliminar" . ($zapatilla['nombre'] ?? '') ." ?",
+      "handler_path"  => "/../../zapatillas/handlers/zapatillas_delete_handler.php",
+      "submit_text"   => "Eliminar Zapatilla",
+      "cancel_url"    => BASE_PATH . "/pages/zapatillas/detalle?id=" . $id ,
+      "submit_class"  => "btn-danger"
+    ];
+  }
