@@ -1,6 +1,6 @@
 async function obtenerZapatilla(id) {
     try {
-        const response = await fetch(`/proyecto_integrador/zapateria/pages/zapatillas/endpointZapatilla?id=${id}`);
+        const response = await fetch(`${BASE_PATH}/pages/zapatillas/endpointZapatilla?id=${id}`);
         if (!response.ok) throw new Error('No encontrada');
         return await response.json();
     } catch (error) {
@@ -15,8 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!btn) return; 
     const id = btn.getAttribute("data-zapatilla");
     const data = await obtenerZapatilla(id);
-    console.log(data);
-    
     if (!data) return;
 
     const imagen = document.getElementById("modal-imagen");
