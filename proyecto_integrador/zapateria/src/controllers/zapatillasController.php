@@ -111,3 +111,9 @@
       "submit_class"  => "btn-danger"
     ];
   }
+  
+  function eliminarZapatilla(string $id): void {
+    $mensaje = eliminarEntrada(DB_ZAPATILLAS, (int)$id);
+    header('Location: ' . BASE_PATH . '/pages/zapatillas');
+    exit;
+  }
