@@ -68,3 +68,17 @@
         guardarDatos($archivo, $datos);
     }
   }
+
+  function eliminarEntrada(string $DB, int $id): string {
+    $datos = cargarDatos($DB);
+    $cantidadOriginal = count($datos);     
+    $datosNuevos = array_values(array_filter($datos, function ($dato) use ($id) {
+      return (int) $dato['id'] !== $id;
+    }));
+
+    $eliminada = count($datosNuevos) < $cantidadOriginal;
+
+    if ($eliminada)  guardarDatos($DB, $datosNuevos);
+    $mensaje = $eliminada ? '' : 'No se encontró el elemento a eliminar';
+    return $mensaje;
+  }
