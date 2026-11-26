@@ -96,6 +96,7 @@
     $zapatillas = cargarDatos(DB_ZAPATILLAS);
     $zapatilla = buscarPorId($zapatillas, (int)$id);
     return [
+      "marcas"        =>  cargarDatos(DB_MARCAS),
       "template"      =>  "crear_zapatilla",
       "scripts"       =>  "bootstrap",
       "form_path"     =>  BASE_PATH . "/pages/zapatillas/eliminar/?id=" . $id,
