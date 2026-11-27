@@ -1,4 +1,6 @@
 <?php
+  declare(strict_types=1);
+
   function validarImagen(string $imagen): string {
     if ($imagen !== '' && filter_var($imagen, FILTER_VALIDATE_URL) === false) {
         return 'El link de la imagen debe ser una URL válida (por ejemplo, empezar con https://).';
@@ -30,20 +32,32 @@
   } 
 
   function validarCreacionZapatillas(array $datos): string {
-    // 1. Armamos los campos requeridos (usando el array que nos pasan)
-    $campos_requeridos = [
+
+  $campos_requeridos = [
       "nombre"    => $datos['nombre'] ?? '',
-      "marca_id"   => $datos['marca_id'] ?? '',
+      "marca_id"  => $datos['marca_id'] ?? '',
       "precio"    => $datos['precio'] ?? '',
       "stock"     => $datos['stock'] ?? ''
     ];
 
-    // 2. Validamos los obligatorios y guardamos el resultado
     $mensaje = validarCamposRequeridos($campos_requeridos);
 
-    // 3. Si no hubo error en los obligatorios, validamos la imagen
     if ($mensaje === '') {
-        $mensaje = validarImagen($datos['imagen'] ?? '');
+      $mensaje = validarImagen($datos['imagen'] ?? '');
+    }
+
+    if ($mensaje === '') {
+      $mensaje = validarNumero('precio', $datos['precio'] ?? '');
+    }
+    if ($mensaje === '') {
+      $mensaje = validarPositivo('precio', $datos['precio'] ?? '');
+    }
+    
+    if ($mensaje === '') {
+      $mensaje = validarNumero('stock', $datos['stock'] ?? '');
+    }
+    if ($mensaje === '') {
+      $mensaje = validarPositivo('stock', $datos['stock'] ?? '');
     }
 
     return $mensaje;
