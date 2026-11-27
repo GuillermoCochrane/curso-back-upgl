@@ -15,6 +15,13 @@
     return '';
   }
 
+  function validarNumero(string $nombreCampo, string $valor): string {
+    if (filter_var($valor, FILTER_VALIDATE_FLOAT) === false) {
+      return "El campo $nombreCampo debe ser un número válido.";
+    }
+    return '';
+  }
+
   function validarCreacionZapatillas(array $datos): string {
     // 1. Armamos los campos requeridos (usando el array que nos pasan)
     $campos_requeridos = [
