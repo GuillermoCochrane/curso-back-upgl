@@ -16,7 +16,7 @@ Este archivo registra las funcionalidades, correcciones y refactorizaciones que 
 - [ ] **Permitir precios con decimales**: Actualizar el `JSON`, el input del form y usar `normalizarDecimal()` del `SanitizationService`.
 - [ ] **Validación numérica y referencial en backend**: Validar en `ValidationServices.php` que `precio` y `stock` sean numéricos `>= 0` y que `marca_id` exista en `marcas.json`.
 - [X] **Unificación del JS (El fin del hardcodeo)**: Se eliminó el array hardcodeado en `carga_zapatillas.js` y ahora el modal consume el endpoint JSON mediante `fetch()`.
-- [ ] **Imágenes (Fallback)**: Implementado `fallback.png` en PHP y `onerror` en JS *(pendiente quitar la línea duplicada en `carga_zapatillas.js` que pisa `src` cuando `data.imagen` viene vacío, y usar `BASE_PATH` en el link del modal)*.
+- [x] **Imágenes (Fallback)**: Implementado `fallback.webp` en PHP y `onerror` en JS *(pendiente quitar la línea duplicada en `carga_zapatillas.js` que pisa `src` cuando `data.imagen` viene vacío, y usar `BASE_PATH` en el link del modal)*.
 - [X] **Refactorizar títulos del formulario**: El controlador ya envía `$titulo`, `$submit_text`, `$submit_class` y `$handler_path` hacia `form.php`, dejando la vista libre de lógica.
 - [ ] **Rutas de scripts en Home**: Reemplazar `./public/script/...` por `BASE_PATH` en `src/views/scripts/home.php` y eliminar la URL hardcodeada en `carga_zapatillas.js`.
 - [ ] **Modularizar CSS**: Separar `public/css/styles.css` en archivos más pequeños si el proyecto sigue creciendo.

@@ -91,7 +91,7 @@ zapateria/
     │   └── hero-zapatilla.js          # Control de giro, accesibilidad y fallback del modelo 3D
     └── img/
         ├── logo.png
-        ├── fallback.png               # Imagen por defecto ante URLs vacías o rotas
+        ├── fallback.webp               # Imagen por defecto ante URLs vacías o rotas
         ├── generica.jpg
         └── models/
             ├── zapatilla.glb          # Modelo 3D del hero
@@ -148,7 +148,7 @@ Navegador → pages/zapatillas/editar/index.php?id=1
   * `ValidationServices.php` verifica campos obligatorios y formato de URL de imagen.
   * `SanitizationServices.php` limpia strings/enteros con `trim()` y `filter_var()`, y expone `escapar()` (`htmlspecialchars` UTF-8) para las vistas.
 * **Resiliencia Visual:**
-  * Si una zapatilla no tiene imagen o el enlace externo falla, las vistas aplican `public/img/fallback.png` (y manejador `onerror` en navegador).
+  * Si una zapatilla no tiene imagen o el enlace externo falla, las vistas aplican `public/img/fallback.webp` (y manejador `onerror` en navegador).
   * El hero 3D (`hero-zapatilla.js`) respeta `prefers-reduced-motion`, permite pausar el giro y muestra un estado alternativo si no carga `<model-viewer>`.
 
 ---

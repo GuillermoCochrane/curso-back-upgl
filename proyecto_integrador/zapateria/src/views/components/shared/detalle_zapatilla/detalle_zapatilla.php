@@ -2,7 +2,7 @@
   <section class="col-md-6">
     <figure class="ratio ratio-1x1 bg-white rounded-4 border overflow-hidden">
       <?php 
-        $fallback_path = BASE_PATH . "/public/img/fallback.png";
+        $fallback_path = BASE_PATH . "/public/img/fallback.webp";
         $img_src = !empty($imagen) ? $imagen : $fallback_path; 
       ?>
       <img

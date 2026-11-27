@@ -21,19 +21,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const errorImagen = document.getElementById("modal-imagen-error");
     imagen.classList.remove("d-none");
     errorImagen.classList.replace("d-flex", "d-none");
-    imagen.src = data.imagen ? data.imagen : `${BASE_PATH}/public/img/fallback.png`;
+    imagen.src = data.imagen ? data.imagen : `${BASE_PATH}/public/img/fallback.webp`;
     imagen.onerror = () => {
       imagen.onerror = null; 
-      imagen.src = `${BASE_PATH}/public/img/fallback.png`;
+      imagen.src = `${BASE_PATH}/public/img/fallback.webp`;
     };
     imagen.alt = "Zapatilla " + data.nombre;
-    imagen.src = data.imagen;
-
+    
     document.getElementById("modal-nombre").textContent = data.nombre;
     document.getElementById("modal-precio").textContent = "$" + data.precio;
     document.getElementById("modal-descripcion").textContent = data.descripcion;
     document.getElementById("modal-talles").textContent = data.talles;
     document.getElementById("modal-colores").textContent = data.colores;
-    document.getElementById("modal-btn-detalles").href = `/proyecto_integrador/zapateria/pages/zapatillas/detalle?id=${id}`
+    document.getElementById("modal-btn-detalles").href = `${BASE_PATH}/pages/zapatillas/detalle?id=${id}`;
   });
 });

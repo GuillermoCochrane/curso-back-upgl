@@ -1,7 +1,7 @@
 <article class="col">
 	<div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
 		<?php 
-			$fallback_path = BASE_PATH . "/public/img/fallback.png";
+			$fallback_path = BASE_PATH . "/public/img/fallback.webp";
 			$img_src = !empty($imagen) ? $imagen : $fallback_path; 
 		?>
 		<img
