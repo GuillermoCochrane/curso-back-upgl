@@ -27,7 +27,23 @@
       return "El campo $nombreCampo no puede ser un número negativo.";
     }
     return '';
-  } 
+  }
+
+  function validar(array $campos, string $validacion): string {
+    foreach ($campos as $campo => $valor) {
+      $error = match($validacion) {
+        "requerido" => validarRequerido($campo, $valor),
+        "numero"    => validarNumero($campo, $valor),
+        "positivo"  => validarPositivo($campo, $valor),
+        default     => ''
+      };
+      
+      if ($error !== '') {
+          return $error;
+      }
+    }
+    return '';
+  }
 
   function validarCreacionZapatillas(array $datos): string {
 
