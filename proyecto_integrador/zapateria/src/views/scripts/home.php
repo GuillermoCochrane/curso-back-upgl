@@ -5,6 +5,6 @@
   crossorigin="anonymous"
 >
 </script>
-<script src="./public/script/carga_zapatillas.js"></script>
 <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
-<script src="./public/script/hero-zapatilla.js" defer></script>
+<script src="<?= BASE_PATH ?? "" ?>/public/script/carga_zapatillas.js"></script>
+<script src="<?= BASE_PATH ?? "" ?>/public/script/carga_zapatillas.js"></script>
