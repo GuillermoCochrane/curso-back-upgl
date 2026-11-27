@@ -111,7 +111,7 @@
                             'type'    => "warning",
                             'message' => empty($zapatilla) ? "Zapatilla no encontrada" : "",
                           ],      
-      "titulo"        =>  "¿Esta seguro que desea eliminar" . ($zapatilla['nombre'] ?? '') ." ?",
+      "titulo" => "¿Está seguro que desea eliminar la Zapatilla " . ($zapatilla['nombre'] ?? '') . " ?",
       "handler_path"  => "/../../zapatillas/handlers/zapatillas_delete_handler.php",
       "submit_text"   => "Eliminar Zapatilla",
       "cancel_url"    => BASE_PATH . "/pages/zapatillas/detalle?id=" . $id ,
