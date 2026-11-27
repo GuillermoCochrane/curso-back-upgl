@@ -5,7 +5,7 @@
 
 ---
 
-### 📂 Estructura Minima Requerida (Consigna Original)
+### 📂 Estructura Mínima Requerida (Consigna Original)
 - [x] `header.php`
 - [x] `footer.php`
 - [x] `funciones.php`
@@ -13,18 +13,18 @@
 - [x] `home.php`
 - [x] `index.php`
 
-*(Nota: La estructura real del proyecto evolucionó hacia una arquitectura más profesional con enrutador, controladores y JSON).*
+*(Nota: La estructura real del proyecto evolucionó hacia una arquitectura modular con Front Controller, sub-routers, controladores, servicios de validación/sanitización y persistencia en JSON. Ver [`README.md`](README.md) para el mapa completo).*
 
 ---
 
 ### 👟 Entidad: Zapatilla (Campos Requeridos)
 Cada zapatilla debe contar con los siguientes datos:
-- **Marca**: (Ej. Nike, Adidas)
-- **Modelo**: (Ej. Dunk Low)
-- **Color**: (Ej. Blanco, Negro)
-- **Talle**: (Ej. 36, 37, 38...)
-- **Precio**: (Numérico)
-- **Stock**: (Cantidad disponible)
+- [x] **Marca**: (Ej. Nike, Adidas — implementada como entidad relacionada en `marcas.json` mediante `marca_id`)
+- [x] **Modelo**: (Ej. Dunk Low — guardado en `nombre`)
+- [x] **Color**: (Ej. Blanco, Negro)
+- [x] **Talle**: (Ej. 36, 37, 38...)
+- [x] **Precio**: (Numérico)
+- [x] **Stock**: (Cantidad disponible)
 
 ---
 

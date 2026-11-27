@@ -1,27 +1,31 @@
 # 📝 Deuda Técnica y Backlog (Proyecto Zapatería)
 
-Este archivo registra todas las funcionalidades, mejoras y refactorizaciones que decidimos postergar para mantener el enfoque en el MVP actual (ABM de Zapatillas) y cumplir con la consigna del curso.
+Este archivo registra las funcionalidades, correcciones y refactorizaciones que se resolvieron durante el cierre del MVP o quedaron planificadas para futuras iteraciones más allá de la consigna del curso.
 
-## 🚀 Funcionalidades del CRUD Faltantes
-- [ ] **ABM de Marcas**: CRUD completo para gestionar las marcas.
-- [ ] **ABM de Talles y Colores**: CRUD para gestionar estas entidades (actualmente son strings/arrays manuales).
+## 🚀 Funcionalidades del CRUD y Catálogo Pendientes
+- [ ] **Buscador / filtro por nombre**: Implementar búsqueda por texto en el catálogo (o predictiva desde el header) usando `stripos()`.
+- [ ] **Mostrar nombre de la marca en el detalle**: Resolver el nombre de la marca a partir de `marca_id` tanto en la vista de detalle como en el modal.
+- [ ] **Filtro dedicado por marca (`/pages/marcas`)**: Dar lógica propia a `routerMarcas.php` para filtrar el catálogo por marca (ej: `/marcas/nike`) en lugar de derivar a `helpController.php`.
+- [ ] **ABM de Marcas**: CRUD completo para gestionar las marcas en `marcas.json`.
+- [ ] **ABM de Talles y Colores**: CRUD para gestionar estas entidades y habilitar múltiples talles/colores por zapatilla (hoy son valores simples).
+- [ ] **Home Dinámica**: Mostrar un subconjunto (ej. 3 zapatillas aleatorias) por marca en la landing y dejar el catálogo completo en `/pages/zapatillas`.
 
-## 🎨 Frontend y UX (Experiencia de Usuario)
-- [ ] **Restaurar validación nativa HTML**: Volver a poner `"required" => true` en el `zapatillas_form_handler.php` (se dejó en `false` para testear las validaciones de backend).
-- [ ] **Validación individual por campo**: Mostrar los mensajes de error debajo de cada input (usando la clase `invalid-feedback` de Bootstrap) en lugar de un cartel genérico.
-- [ ] **Unificación del JS (El fin del hardcodeo)**: Eliminar el array gigante de `carga_zapatillas.js` y hacer que los datos del modal se consuman mediante un `fetch()` a una API en PHP o mediante `json_encode()`.
-- [ ] **Home Dinámica**: Modificar la lógica para que la página de inicio solo muestre 3 zapatillas aleatorias de cada marca.
-- [ ] **Filtro por marca**: Hacer que al hacer clic en una marca (ej: `/marcas/nike`), el catálogo se filtre mostrando solo esa marca.
-- [ ] **Modularizar CSS**: Separar el `estilos.css` en archivos más pequeños por responsabilidad (si el proyecto sigue creciendo).
-- [ ] **Buscador**: implemnetar un buscador predictivo en el header, disponible en todas las paginas
-- [ ] **Imagenes**: crear un fallback por defecto para cuando los productos / marcas, no tienen imagen
-- [ ] **Refactorizar títulos del formulario**: Mover la lógica de `if ($editar)` de la vista `zapatilla_form.php` a un ViewModel o al controlador para mantener el template 100% "tonto".
+## 🎨 Frontend, UX y Validación
+- [X] **Restaurar validación nativa HTML**: `"required" => true` restaurado en `zapatillas_form_handler.php` para `nombre`, `marca_id`, `precio` y `stock`.
+- [ ] **Validación individual por campo**: Los partials (`input.php`, `select.php`, `textarea.php`) ya soportan `is-invalid` e `invalid-feedback`; falta devolver errores por campo desde `ValidationServices.php` y el controlador en lugar de un único mensaje general.
+- [ ] **Permitir precios con decimales**: Actualizar el `JSON`, el input del form y usar `normalizarDecimal()` del `SanitizationService`.
+- [ ] **Validación numérica y referencial en backend**: Validar en `ValidationServices.php` que `precio` y `stock` sean numéricos `>= 0` y que `marca_id` exista en `marcas.json`.
+- [X] **Unificación del JS (El fin del hardcodeo)**: Se eliminó el array hardcodeado en `carga_zapatillas.js` y ahora el modal consume el endpoint JSON mediante `fetch()`.
+- [ ] **Imágenes (Fallback)**: Implementado `fallback.png` en PHP y `onerror` en JS *(pendiente quitar la línea duplicada en `carga_zapatillas.js` que pisa `src` cuando `data.imagen` viene vacío, y usar `BASE_PATH` en el link del modal)*.
+- [X] **Refactorizar títulos del formulario**: El controlador ya envía `$titulo`, `$submit_text`, `$submit_class` y `$handler_path` hacia `form.php`, dejando la vista libre de lógica.
+- [ ] **Rutas de scripts en Home**: Reemplazar `./public/script/...` por `BASE_PATH` en `src/views/scripts/home.php` y eliminar la URL hardcodeada en `carga_zapatillas.js`.
+- [ ] **Modularizar CSS**: Separar `public/css/styles.css` en archivos más pequeños si el proyecto sigue creciendo.
 
-## 🏗️ Arquitectura y Refactorizaciones
-- [X] **Refactorizar `CRUDServices.php`**: Quitar el hardcodeo de `DB_ZAPATILLAS` en `agregarEntrada` para que el servicio sea 100% genérico y sirva para guardar Marcas o Talles.
-- [ ] **Migrar a Pretty URLs (Rutas amigables)**: Pasar de `/pages/zapatillas/detalle?id=1` a `/zapatillas/nike-dunk-low` (requeriría configurar `.htaccess` en Apache).
-- [ ] **Implementar Autenticación (Login/Sesiones)**: Usar `$_SESSION` en PHP para proteger la ruta `/crear` y que solo los administradores logueados puedan agregar, modificar o borrar zapatillas.
-- [ ] **Method Override**: Implementar la lógica para simular métodos `PUT` y `DELETE` en formularios HTML (usando un `<input type="hidden" name="_method">`).
-- [ ] Habilitar talles y colores muLtiples al agregar las entidades correspondientes
-
----
+## 🏗️ Arquitectura, Seguridad y Refactorizaciones
+- [X] **Refactorizar `CRUDServices.php` (Alta)**: `agregarEntrada()` ya recibe `$entidad` y `$DB` usando `modelHandler()` *(pendiente generalizar también `actualizarEntrada()` y unificar el orden de parámetros entre las funciones del servicio)*.
+- [ ] **Bloquear formulario en ID inexistente**: Evitar renderizar el formulario/botón en `datosEditarZapatilla` y `datosEliminarZapatilla` cuando `empty($zapatilla)`.
+- [ ] **PRG completo en Eliminar y mensajes Flash**: Redirigir tras eliminar y migrar alertas de éxito/error a `$_SESSION` para no perderlas al recargar.
+- [ ] **Escape de salidas faltante**: Aplicar `escapar()` en `$titulo` dentro de `form.php` y en `$img_src` en tarjetas/detalle.
+- [ ] **Migrar a Pretty URLs (Rutas amigables)**: Configurar `.htaccess` en Apache para evitar los stubs en `pages/` (ej: `/zapatillas/nike-dunk-low`).
+- [ ] **Implementar Autenticación (Login/Sesiones)**: Usar `$_SESSION` en PHP para proteger las rutas de administración (`/crear`, `/editar`, `/eliminar`).
+- [ ] **Method Override**: Simular métodos `PUT` y `DELETE` en formularios HTML mediante un `<input type="hidden" name="_method">`.
