@@ -64,7 +64,9 @@
     if (empty($datos)) {
       $zapatillas = cargarDatos(DB_ZAPATILLAS);
       $zapatilla = buscarPorId($zapatillas, (int)$id);
-      $mensaje = empty($zapatilla) ? "Zapatilla no encontrada" : "";
+      if (empty($zapatilla)) {
+          return datosZapatilla($id); 
+      }
     } else {
         $zapatilla = $datos; 
         $zapatilla['id'] = $id; 
@@ -95,6 +97,11 @@
   function datosEliminarZapatilla(string $id): array {
     $zapatillas = cargarDatos(DB_ZAPATILLAS);
     $zapatilla = buscarPorId($zapatillas, (int)$id);
+
+    if (empty($zapatilla)) {
+        return datosZapatilla($id);
+    }
+
     return [
       "marcas"        =>  cargarDatos(DB_MARCAS),
       "template"      =>  "crear_zapatilla",
