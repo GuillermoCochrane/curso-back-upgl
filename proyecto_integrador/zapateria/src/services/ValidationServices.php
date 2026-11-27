@@ -37,41 +37,40 @@
         "positivo"  => validarPositivo($campo, $valor),
         default     => ''
       };
-      
+
       if ($error !== '') {
-          return $error;
+        return $error;
       }
     }
     return '';
   }
 
   function validarCreacionZapatillas(array $datos): string {
-
-  $campos_requeridos = [
+    $campos_requeridos = [
       "nombre"    => $datos['nombre'] ?? '',
       "marca_id"  => $datos['marca_id'] ?? '',
       "precio"    => $datos['precio'] ?? '',
       "stock"     => $datos['stock'] ?? ''
     ];
 
-    $mensaje = validarCamposRequeridos($campos_requeridos);
+    $campos_numericos = [
+      "marca_id"  => $datos['marca_id'] ?? '',
+      "precio"    => $datos['precio'] ?? '',
+      "stock"     => $datos['stock'] ?? ''
+    ];
+
+    $mensaje = validar($campos_requeridos, "requerido");
 
     if ($mensaje === '') {
       $mensaje = validarImagen($datos['imagen'] ?? '');
     }
 
     if ($mensaje === '') {
-      $mensaje = validarNumero('precio', $datos['precio'] ?? '');
+      $mensaje = validar($campos_numericos, "numero");
     }
+
     if ($mensaje === '') {
-      $mensaje = validarPositivo('precio', $datos['precio'] ?? '');
-    }
-    
-    if ($mensaje === '') {
-      $mensaje = validarNumero('stock', $datos['stock'] ?? '');
-    }
-    if ($mensaje === '') {
-      $mensaje = validarPositivo('stock', $datos['stock'] ?? '');
+      $mensaje = validar($campos_numericos, "positivo");
     }
 
     return $mensaje;
