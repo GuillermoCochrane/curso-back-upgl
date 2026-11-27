@@ -1,23 +1,23 @@
-<div class="<?= $col_class ?? 'col-md-6' ?>">
+<div class="<?= escapar($col_class ?? 'col-md-6') ?>">
   <label
     class="form-label"
-    for="<?= $name ?? "" ?>">
-    <?= $label ?? "" ?>
+    for="<?= escapar($name ?? '') ?>">
+    <?= escapar($label ?? '') ?>
   </label>
   <input
-    id="<?= $name ?? "" ?>"
-    type="<?= $type ?? 'text' ?>"
-    name="<?= $name ?? "" ?>"
+    id="<?= escapar($name ?? '') ?>"
+    type="<?= escapar($type ?? 'text') ?>"
+    name="<?= escapar($name ?? '') ?>"
     class="form-control <?= (isset($error) && $error) ? 'is-invalid' : '' ?>" 
-    placeholder="<?= $placeholder ?? '' ?>"
-    value="<?= $value ?? '' ?>"
-    <?= isset($required) && $required ? 'required' : '' ?>
-    <?= isset($min) ? 'min="' . $min . '"' : '' ?>
-    <?= isset($max) ? 'max="' . $max . '"' : '' ?>>
+    placeholder="<?= escapar($placeholder ?? '') ?>"
+    value="<?= escapar($value ?? '') ?>"
+    <?= !empty($required) ? 'required' : '' ?>
+    <?= isset($min) ? 'min="' . escapar((string) $min) . '"' : '' ?>
+    <?= isset($max) ? 'max="' . escapar((string) $max) . '"' : '' ?>>
 
     <span 
       class="invalid-feedback text-warning mt-1"
-      id="<?= 'error-' . ($name ?? '') ?>">
-      <?= $error ?? "" ?>
+      id="error-<?= escapar($name ?? '') ?>">
+      <?= escapar($error ?? '') ?>
     </span>
 </div>

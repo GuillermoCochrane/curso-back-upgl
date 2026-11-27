@@ -1,25 +1,27 @@
-<div class="<?= $col_class ?? 'col-md-6' ?>">
+<div class="<?= escapar($col_class ?? 'col-md-6') ?>">
   <label
     class="form-label"
-    for="<?= $name ?? "" ?>">
-    <?= $label ?? "" ?>
+    for="<?= escapar($name ?? '') ?>">
+    <?= escapar($label ?? '') ?>
   </label>
   <select
-    id="<?= $name ?? "" ?>"
-    name="<?= $name ?? "" ?>"
+    id="<?= escapar($name ?? '') ?>"
+    name="<?= escapar($name ?? '') ?>"
     class="form-select <?= (isset($error) && $error) ? 'is-invalid' : '' ?>"
-    <?= isset($required) && $required ? 'required' : '' ?>
+    <?= !empty($required) ? 'required' : '' ?>
   >
-    <option value="">Seleccione <?= $default_option ?? "una opcion" ?>...</option>
+    <option value="">Seleccione <?= escapar($default_option ?? 'una opcion') ?>...</option>
     <?php 
-      require_once __DIR__ . ($handler ?? "");
+      if (!empty($handler)) {
+        require_once __DIR__ . $handler;
+      }
       /** @disregard P1010 Undefined function */
       render_options($options ?? [], $value ?? null);
     ?>
   </select>
   <span
     class="invalid-feedback text-warning mt-1"
-    id="<?= 'error-' . ($name ?? '') ?>">
-    <?= $error ?? "" ?>
+    id="error-<?= escapar($name ?? '') ?>">
+    <?= escapar($error ?? '') ?>
   </span>
 </div>

@@ -1,6 +1,6 @@
 <a  
   class="nav-link" 
-  href="#<?= $slug ?? "marca-generica" ?>"
+  href="#<?= escapar($slug ?? "marca-generica") ?>"
 >
-  <?= htmlspecialchars(ucfirst($nombre ?? "Marca Generica"), ENT_QUOTES, 'UTF-8') ?>
+  <?= escapar(ucfirst($nombre ?? "Marca Generica")) ?>
 </a>

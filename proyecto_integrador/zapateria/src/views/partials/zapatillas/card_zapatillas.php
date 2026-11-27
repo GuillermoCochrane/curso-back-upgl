@@ -7,15 +7,15 @@
 		<img
 			src="<?= $img_src ?>"
 			class="card-img-top p-3 bg-white"
-			alt="Zapatilla <?= $nombre ?? 'Generica' ?>"
-			onerror="this.onerror=null; this.src='<?= $fallback_path ?>';"
+			alt="Zapatilla <?= escapar($nombre ?? 'Generica') ?>"
+			onerror="this.onerror=null; this.src='<?= escapar($fallback_path) ?>';"
 		>
 		<div class="card-body p-4 d-flex flex-column">
 			<h5 class="card-title fw-bold">
-				<?= isset($nombre) ? $nombre : "Zapatilla Generica" ?>
+				<?= isset($nombre) ? escapar($nombre) : "Zapatilla Generica" ?>
 			</h5>
 			<p class="card-text text-body-secondary small">
-				<?= isset($descripcion) ? $descripcion : "" ?>
+				<?= isset($descripcion) ? escapar($descripcion) : "" ?>
 			</p>
 			<button
 				class="btn btn-outline-dark rounded-pill mt-auto"

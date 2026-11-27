@@ -9,8 +9,8 @@
         id="modal-imagen"
         class="w-100 h-100 object-fit-contain p-3"
         src="<?= $img_src ?>"
-        alt="<?= $nombre ?? '' ?>"
-        onerror="this.onerror=null; this.src='<?= $fallback_path ?>';"
+        alt="<?= escapar($nombre ?? '') ?>"
+        onerror="this.onerror=null; this.src='<?= escapar($fallback_path) ?>';"
       >
       <div
         id="modal-imagen-error"
@@ -26,26 +26,26 @@
     <strong class="badge text-bg-warning rounded-pill mb-3">Detalles del modelo</strong>
 
     <h3 id="modal-nombre" class="h4 fw-bold text-primary mb-2">
-      <?= $nombre ?? '' ?>
+      <?= escapar($nombre ?? '') ?>
     </h3>
 
     <p id="modal-precio" class="fs-2 fw-bold text-primary mb-3">
-      $<?= $precio ?? '' ?>
+      $<?= escapar($precio ?? '') ?>
     </p>
 
     <p id="modal-descripcion" class="text-body-secondary mb-4">
-      <?= $descripcion ?? '' ?>
+      <?= escapar($descripcion ?? '') ?>
     </p>
 
     <dl class="mb-0 border-top pt-3">
       <dt class="small text-uppercase text-primary mb-2">Talles disponibles</dt>
       <dd id="modal-talles" class="mb-3">
-        <?=  $talles ?? '' ?>
+        <?=  escapar($talles ?? '') ?>
       </dd>
 
       <dt class="small text-uppercase text-primary mb-2">Colores</dt>
       <dd id="modal-colores" class="mb-0">
-        <?= $colores ?? '' ?>
+        <?= escapar($colores ?? '') ?>
       </dd>
     </dl>
   </section>

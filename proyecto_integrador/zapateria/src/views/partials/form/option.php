@@ -1,6 +1,6 @@
 <option 
-  value="<?= $id ?? "" ?>"
+  value="<?= escapar($id ?? '') ?>"
   <?= (isset($value) && $value == $id) ? 'selected' : '' ?>
   >
-  <?= $nombre ?? "" ?>
+  <?= escapar($nombre ?? '') ?>
 </option>
