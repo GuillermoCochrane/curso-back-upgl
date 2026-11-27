@@ -124,8 +124,8 @@
     $type = "warning";
 
     if ($mensaje === ""){
-      $mensaje = "Zapatilla eliminada con exito";
-      $type = "success";
+      header('Location: ' . BASE_PATH . '/pages/zapatillas');
+      exit;
     }
 
     return [

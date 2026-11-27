@@ -24,7 +24,8 @@ Este archivo registra las funcionalidades, correcciones y refactorizaciones que 
 ## 🏗️ Arquitectura, Seguridad y Refactorizaciones
 - [X] **Refactorizar `CRUDServices.php` (Alta)**: `agregarEntrada()` ya recibe `$entidad` y `$DB` usando `modelHandler()` *(pendiente generalizar también `actualizarEntrada()` y unificar el orden de parámetros entre las funciones del servicio)*.
 - [X] **Bloquear formulario en ID inexistente**: Evitar renderizar el formulario/botón en `datosEditarZapatilla` y `datosEliminarZapatilla` cuando `empty($zapatilla)`.
-- [ ] **PRG completo en Eliminar y mensajes Flash**: Redirigir tras eliminar y migrar alertas de éxito/error a `$_SESSION` para no perderlas al recargar.
+- [X] **PRG completo en Eliminar**: Redirigir tras eliminar.
+- [ ] **Mensajes Flash**: Migrar alertas de éxito/error a `$_SESSION` para no perderlas al recargar
 - [X] **Escape de salidas faltante**: Aplicar `escapar()` en `$titulo` dentro de `form.php` y en `$img_src` en tarjetas/detalle.
 - [ ] **Migrar a Pretty URLs (Rutas amigables)**: Configurar `.htaccess` en Apache para evitar los stubs en `pages/` (ej: `/zapatillas/nike-dunk-low`).
 - [ ] **Implementar Autenticación (Login/Sesiones)**: Usar `$_SESSION` en PHP para proteger las rutas de administración (`/crear`, `/editar`, `/eliminar`).
