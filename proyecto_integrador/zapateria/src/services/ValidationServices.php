@@ -22,6 +22,13 @@
     return '';
   }
 
+  function validarPositivo(string $nombreCampo, string $valor): string {
+    if ((float)$valor < 0) {
+      return "El campo $nombreCampo no puede ser un número negativo.";
+    }
+    return '';
+  } 
+
   function validarCreacionZapatillas(array $datos): string {
     // 1. Armamos los campos requeridos (usando el array que nos pasan)
     $campos_requeridos = [
