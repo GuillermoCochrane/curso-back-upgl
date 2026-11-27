@@ -8,7 +8,7 @@
       <img
         id="modal-imagen"
         class="w-100 h-100 object-fit-contain p-3"
-        src="<?= $img_src ?>"
+        src="<?= escapar($img_src) ?>"
         alt="<?= escapar($nombre ?? '') ?>"
         onerror="this.onerror=null; this.src='<?= escapar($fallback_path) ?>';"
       >

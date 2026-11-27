@@ -16,7 +16,7 @@ Este archivo registra las funcionalidades, correcciones y refactorizaciones que 
 - [ ] **Permitir precios con decimales**: Actualizar el `JSON`, el input del form y usar `normalizarDecimal()` del `SanitizationService`.
 - [ ] **Validación numérica y referencial en backend**: Validar en `ValidationServices.php` que `precio` y `stock` sean numéricos `>= 0` y que `marca_id` exista en `marcas.json`.
 - [X] **Unificación del JS (El fin del hardcodeo)**: Se eliminó el array hardcodeado en `carga_zapatillas.js` y ahora el modal consume el endpoint JSON mediante `fetch()`.
-- [x] **Imágenes (Fallback)**: Implementado `fallback.webp` en PHP y `onerror` en JS *(pendiente quitar la línea duplicada en `carga_zapatillas.js` que pisa `src` cuando `data.imagen` viene vacío, y usar `BASE_PATH` en el link del modal)*.
+- [X] **Imágenes (Fallback)**: Implementado `fallback.webp` en PHP y `onerror` en JS *(pendiente quitar la línea duplicada en `carga_zapatillas.js` que pisa `src` cuando `data.imagen` viene vacío, y usar `BASE_PATH` en el link del modal)*.
 - [X] **Refactorizar títulos del formulario**: El controlador ya envía `$titulo`, `$submit_text`, `$submit_class` y `$handler_path` hacia `form.php`, dejando la vista libre de lógica.
 - [ ] **Rutas de scripts en Home**: Reemplazar `./public/script/...` por `BASE_PATH` en `src/views/scripts/home.php` y eliminar la URL hardcodeada en `carga_zapatillas.js`.
 - [ ] **Modularizar CSS**: Separar `public/css/styles.css` en archivos más pequeños si el proyecto sigue creciendo.
@@ -25,7 +25,7 @@ Este archivo registra las funcionalidades, correcciones y refactorizaciones que 
 - [X] **Refactorizar `CRUDServices.php` (Alta)**: `agregarEntrada()` ya recibe `$entidad` y `$DB` usando `modelHandler()` *(pendiente generalizar también `actualizarEntrada()` y unificar el orden de parámetros entre las funciones del servicio)*.
 - [ ] **Bloquear formulario en ID inexistente**: Evitar renderizar el formulario/botón en `datosEditarZapatilla` y `datosEliminarZapatilla` cuando `empty($zapatilla)`.
 - [ ] **PRG completo en Eliminar y mensajes Flash**: Redirigir tras eliminar y migrar alertas de éxito/error a `$_SESSION` para no perderlas al recargar.
-- [ ] **Escape de salidas faltante**: Aplicar `escapar()` en `$titulo` dentro de `form.php` y en `$img_src` en tarjetas/detalle.
+- [X] **Escape de salidas faltante**: Aplicar `escapar()` en `$titulo` dentro de `form.php` y en `$img_src` en tarjetas/detalle.
 - [ ] **Migrar a Pretty URLs (Rutas amigables)**: Configurar `.htaccess` en Apache para evitar los stubs en `pages/` (ej: `/zapatillas/nike-dunk-low`).
 - [ ] **Implementar Autenticación (Login/Sesiones)**: Usar `$_SESSION` en PHP para proteger las rutas de administración (`/crear`, `/editar`, `/eliminar`).
 - [ ] **Method Override**: Simular métodos `PUT` y `DELETE` en formularios HTML mediante un `<input type="hidden" name="_method">`.

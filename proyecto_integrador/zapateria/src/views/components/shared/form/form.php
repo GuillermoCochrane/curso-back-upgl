@@ -3,7 +3,7 @@
     <div class="col-md-8 col-lg-6 bg-white p-4 p-md-5 rounded-4 shadow-sm">
 
       <h2 class="mb-4 fw-bold text-primary">
-        <?= $titulo ?? "Formulario" ?>
+        <?= escapar($titulo ?? "Formulario") ?>
       </h2>
 
       <?php 

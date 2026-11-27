@@ -5,7 +5,7 @@
 			$img_src = !empty($imagen) ? $imagen : $fallback_path; 
 		?>
 		<img
-			src="<?= $img_src ?>"
+			src="<?= escapar($img_src) ?>"
 			class="card-img-top p-3 bg-white"
 			alt="Zapatilla <?= escapar($nombre ?? 'Generica') ?>"
 			onerror="this.onerror=null; this.src='<?= escapar($fallback_path) ?>';"
