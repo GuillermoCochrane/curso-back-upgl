@@ -8,11 +8,9 @@
     return ''; 
   }
 
-  function validarCamposRequeridos(array $campos): string {
-    foreach ($campos as $campo => $valor) {
-      if (trim($valor) === '') {
-        return "Debe completar el campo $campo.";
-      }
+  function validarRequerido(string $nombreCampo, string $valor): string {
+    if (trim($valor) === '') {
+      return "Debe completar el campo $nombreCampo.";
     }
     return '';
   }
